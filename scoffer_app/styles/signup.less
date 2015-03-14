@@ -1,0 +1,217 @@
+@import "mixins";
+
+#signup-page {
+  .default-container();
+
+  .form-group label,
+  .form-group input {
+    display: inline;
+  }
+
+  #signup-form {
+    .well();
+    margin-right: 10px;
+    margin-left: 10px;
+
+    @media (min-width: @screen-sm-min) {
+      padding-left: 30px;
+    }
+
+    @media (min-width: @screen-sm-min) {
+      padding-left: 15px;
+      margin-right: 50px;
+      margin-left: 50px;
+    }
+
+    @media (min-width: @screen-md-min) {
+      margin-right: 100px;
+      margin-left: 100px;
+    }
+
+    header {
+      padding-bottom: 15px;
+      border-bottom: 1px solid;
+      font-size: medium;
+      @media (min-width: @screen-sm-min) {
+        padding-left: 30px;
+      }
+
+      h2 {
+        font-family: @brand-font;
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+      }
+
+      p:first-of-type {
+        margin-top: 20px;
+      }
+    }
+
+    form {
+      padding-top: 20px;
+
+      .form-inputs {
+        @media (min-width: @screen-sm-min) {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        h6 {
+          padding-left: 0px !important;
+          padding-bottom: 10px;
+          margin-bottom: 30px;
+          font-size: small;
+          border-bottom: 1px dotted;
+          .make-xs-column(24);
+        }
+
+        .standard-inputs {
+          .make-row();
+
+          .sc-form-group {
+            .make-xs-column(24);
+          }
+
+          label {
+            line-height: normal;
+            padding-left: 0px !important;
+            .make-xs-column(24);
+            .make-sm-column(10);
+            .make-lg-column(6);
+          }
+
+          select {
+            .make-sm-column(8);
+          }
+
+          input, textarea {
+            line-height: normal;
+            .make-xs-column(24);
+            .make-sm-column(12);
+          }
+
+          .long-label {
+            line-height: normal;
+          }
+
+          .sc-small-input {
+            .make-sm-column(8);
+          }
+
+          .sc-large-input {
+            .make-sm-column(14);
+          }
+        }
+
+        .timepicker-group {
+
+          .make-row();
+          padding: 0px;
+
+          div {
+            .make-xs-column(12);
+            .make-lg-column(10);
+
+            .timepicker-label {
+              .make-xs-column(24);
+              .make-sm-column(10);
+              .make-lg-column(15);
+              padding-left: 0px;
+              font-weight: bold;
+
+              @media (min-width: @screen-md-min) {
+                line-height: 101px;
+              }
+            }
+          }
+
+          div + div {
+            .make-lg-column(12);
+
+            .timepicker-label {
+              .make-md-column(11);
+              .make-lg-column(9);
+            }
+          }
+        }
+      }
+      .submit-buttons {
+
+        text-align: center;
+        border-top: 1px solid;
+        padding-top: 10px;
+
+        button {
+          .btn();
+        }
+
+        button:nth-child(1) {
+          .btn-primary()
+        }
+
+        button:nth-child(2) {
+          .btn-info();
+        }
+      }
+    }
+
+  }
+
+  .error {
+    background-color: rgba(255, 12, 2, 0.51);
+    text-align: left;
+    top: -40px !important;
+    margin: -15px -15px 15px -15px;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    padding: 5px;
+    .make-row();
+    -webkit-box-shadow: inset 0px 0px 4px 0px rgba(255, 95, 95, 0.75);
+    -moz-box-shadow: inset 0px 0px 4px 0px rgba(255, 95, 95, 0.75);
+    box-shadow: inset 0px 0px 4px 0px rgba(254, 255, 254, 0.84);
+
+    transition: .25s linear;
+    height: 40px;
+    overflow: hidden;
+
+    .info {
+      font-size: x-large;
+      .make-xs-column(1);
+      top: -1px;
+      left: -10px;
+      color: rgba(121, 121, 121, 0.59);
+      line-height: 30px;
+    }
+
+    h5 {
+      .make-xs-column(17);
+      .make-sm-column(20);
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: rgba(121, 121, 121, 0.87);
+
+      @media (min-width: @screen-sm-min) {
+        line-height: 30px;
+      }
+    }
+
+    button {
+      .make-xs-column(2);
+      float: right;
+      font-size: 20px;
+      text-align: right;
+
+      span {
+        line-height: 30px;
+        margin-right: -15px;
+      }
+    }
+  }
+
+  .error.ng-hide {
+    height: 0px;
+    opacity: 0;
+  }
+
+}

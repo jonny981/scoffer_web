@@ -1,0 +1,106 @@
+<div id="loggedin-landing">
+    <div id="postoffer">
+        <section>
+            <h2>Post an offer!</h2>
+        </section>
+        <p>You can create an unlimited quantity of offers but all offers must be designated an expiry date
+            and may be removed at any time by Scoffer if they are deemed to be inappropriate or misleading.
+            Any duplicate offers will be removed.
+            <br><br>Scoffer will only recognise offers related to the food and drink industry.
+            <br><br>Note that offers are not redeemed through the scoffer app, exchange of monetary sums are
+            restricted to point of sale.</p>
+        <section>
+            <span>Title</span>
+            <textarea type="text" maxlength="100" id="offertitle" placeholder="offer title"
+                      ng-model="offerDetails.title"></textarea>
+            <i class="glyphicon glyphicon-question-sign"
+               tooltip="This is the main title of your offer. This will identify your offer in the app's main news feed"
+               tooltip-placement="right"></i>
+        </section>
+        <section>
+            <span>Details</span>
+            <textarea type="text" maxlength="255" id="offerdetail" placeholder="offer detail"
+                      ng-model="offerDetails.detail"></textarea>
+            <i class="glyphicon glyphicon-question-sign"
+               tooltip="This is the text that will show when a user taps your offer to find out more information"
+               tooltip-placement="right"></i>
+        </section>
+
+        <div class="sc-datepicker row">
+            <span class="sc-datepicker-label">Start Date</span>
+
+            <div class="sc-datepicker-input">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt"
+                           is-open="openedStart"
+                           min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"
+                           date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerStart($event)"><i
+                        class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                </p>
+            </div>
+            <i class="glyphicon glyphicon-question-sign"
+               tooltip="The offer start date, this can be any day from the current date onwards"
+               tooltip-placement="right"></i>
+        </div>
+        <div class="sc-datepicker row">
+            <span class="sc-datepicker-label">End Date</span>
+
+            <div class="sc-datepicker-input">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt"
+                           is-open="openedEnd"
+                           min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"
+                           date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerEnd($event)"><i
+                        class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                </p>
+            </div>
+            <i class="glyphicon glyphicon-question-sign"
+               tooltip="The offer end date, this is a maximum of 7 days from the offer start date"
+               tooltip-placement="right"></i>
+        </div>
+
+        <section>
+            <div id="direct_upload" ng-file-drop ng-file-drag-over-class="dragOverClass($event)" ng-model="files"
+                 ng-multiple="false">
+                <p>Image Upload. You don't have to upload an image to post your offer, but it is recommended to help
+                    your offer stand out.</p>
+
+                <div class="form_controls">
+                    <div class="upload_button_holder">
+                        <button class="upload_button" ng-file-select ng-multiple="false"
+                                title="upload" resetOnClick="true" ng-model="files"><span
+                                class="fa fa-cloud-upload"></span> Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div ng-repeat="file in files">
+            <progressbar animate="true" value="file.progress"
+                         type="{{file.progress === 100 ? 'success' : 'error'}}">
+                <b>{{file.progress}}%</b>
+            </progressbar>
+            <img id="preview" ng-src="{{uploadedURL}}">
+            <span id="progress-message">{{file.progress === 100 ? file.name + ' Uploaded Successfully' : file.progress + '%'}}</span>
+        </div>
+
+
+        <section>
+            <div>
+                <p>By posting an offer you agree to Scoffer terms and conditions, and that your offer will be subject to
+                    removal
+                    if it contains any content that is deemed inappropriate by Scoffer or any other users.</p>
+                <button>Preview Offer</button>
+                <button>Post Offer</button>
+            </div>
+        </section>
+    </div>
+</div>
+

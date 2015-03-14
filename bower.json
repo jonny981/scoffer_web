@@ -1,0 +1,16 @@
+{
+  "name": "Scoffer_business_use_interface",
+  "version": "1.0",
+  "dependencies": {
+    "ng-file-upload": "2.2.x",
+    "angular": "1.2.x",
+    "angular-route": "~1.2.x",
+    "angular-resource": "~1.2.x",
+    "angular-animate": "~1.2.x",
+    "cloudinary_ng": ">=0.1.1",
+    "moment": "~2.9.0",
+    "angular-bootstrap": "~0.12.1",
+    "angular-ui-router": "~0.2.13",
+    "bootstrap": "~3.3.2"
+  }
+}

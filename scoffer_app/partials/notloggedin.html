@@ -1,0 +1,37 @@
+<div class="landingdiv1">
+  <h1>Scoffer</h1>
+
+  <div class="login-form" id="login-area">
+    <h3>Existing User? Login to begin posting!</h3>
+
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+      <input type="text" class="form-control" placeholder="Username">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+      <input type="text" class="form-control" placeholder="Password">
+    </div>
+    <button ui-sref="loggedinlanding" ng-click="loggedin.toggle = true; testme()">Sign in</button>
+    <span><a>Forgotton your login details?</a></span>
+  </div>
+</div>
+
+<div class="landingdiv2">
+  <div id="signup-container">
+    <div id="signup">
+      <h2>Not a member?</h2>
+      <section>Scoffer is the newest daily deals site.
+        We believe that everyone should have access to the best deals, and unlike most alternatives, we won't charge
+        business to post offers
+      </section>
+      <button ui-sref="signup">Sign up now</button>
+    </div>
+    <div id=home-carousel>
+    <carousel id="carousel" interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+      </slide>
+    </div>
+  </div>
+</div>

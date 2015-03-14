@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scofferApp" ng-controller="HomeCtrl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scoffer</title>
+  <link href="styles/scoffer-styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<!--main navbar which is always present-->
+<nav id="navbar-example" class="navbar navbar-inverse navbar-static" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="notloggedin">Scoffer</a>
+    </div>
+    <div collapse="isCollapsed" class="navbar-collapse bs-js-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ng-show="loggedin.toggle" class="dropdown">
+          <a id="drop1" role="button" class="dropdown-toggle" data-toggle="dropdown">Your Offers <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+            <li role="presentation"><a class="dropdown-link" role="menuitem" tabindex="-1">Post Offer</a></li>
+            <li role="presentation"><a class="dropdown-link" role="menuitem" tabindex="-1">Remove offer</a></li>
+            <li role="presentation"><a class="dropdown-link" role="menuitem" tabindex="-1">View your offers</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+            <li role="presentation"><a class="dropdown-link" role="menuitem" tabindex="-1" ui-sref="about">Contact</a></li>
+            <li role="presentation"><a class="dropdown-link" role="menuitem" tabindex="-1">Developer Info</a></li>
+            <li role="presentation"><a class="dropdown-link" role="menuitem" tabindex="-1">Help/FAQ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://play.google.com/store?hl=en_GB" role="button">Get <span>Scoffer</span> for Android<img src="resources/google_play.png"></a></li>
+      </ul>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div ui-view>
+</div>
+</body>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<!--core libraries-->
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+
+<!-- cloudinary angular plugin -->
+<script type="text/javascript" src="../bower_components/cloudinary_ng/js/angular.cloudinary.js"></script>
+<script src="../bower_components/cloudinary_js/js/jquery.cloudinary.js"></script>
+
+<!-- angular file upload -->
+<script type="text/javascript" src="../bower_components/ng-file-upload/angular-file-upload.min.js"></script>
+
+<!--main app and ui routes-->
+<script type="text/javascript" type="text/javascript" src="angular/app.js"></script>
+
+<!--controllers-->
+<script type="text/javascript" src="angular/home.controller.js"></script>
+<script type="text/javascript" src="angular/loggedin.controller.js"></script>
+<script type="text/javascript" src="angular/signup.controller.js"></script>
+<script type="text/javascript" src="angular/config.js"></script>
+<script type="text/javascript" src="angular/animations.js"></script>
+<script type="text/javascript" src="angular/services.js"></script>
+
+<!--directives-->
+<script type="text/javascript" src="angular/components-reusable/validate-start-date.js"></script>
+<script type="text/javascript" src="angular/components-reusable/validate-end-date.js"></script>
+
+<!--filters-->
+<script type="text/javascript" src="angular/components-reusable/filter-by-date.js"></script>
+<script type="text/javascript" src="angular/components-reusable/format-date.js"></script>
+</html>

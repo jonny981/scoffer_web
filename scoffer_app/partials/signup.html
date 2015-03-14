@@ -1,0 +1,105 @@
+<div id="signup-page">
+  <div id="signup-form">
+    <div class="error" ng-hide="errorType === 'none'" ng-switch on="errorType">
+      <span class="info glyphicon glyphicon-info-sign"></span>
+      <h5 ng-switch-when="missingdata">Error! You have not completed all of the required data fields</h5>
+      <h5 ng-switch-when="zeroresults">Error! We were unable to determine your location, please check the address you
+        entered</h5>
+      <h5 ng-switch-when="googlemaps">Error! We were unable to contact google maps to determine your location</h5>
+      <h5 ng-switch-when="servererror">Sorry! The Scoffer server appears to be offline or unreachable, please try again
+        later</h5>
+      <button class="close" ng-click="clearError()"><span class="glyphicon glyphicon-remove"></span></button>
+    </div>
+    <header>
+      <h2>Sign up to Scoffer now!</h2>
+
+      <p>Signing up is quick and easy, and you can begin posting offers as soon as you have created an account. After
+        you sign up successfully you will be re-directed to the login page.</p>
+
+      <p>There are lots of great reasons to sign up:</p>
+      <ul>
+        <li>It's free</li>
+        <li>No fees or transactions to worry about</li>
+        <li>Unlimited offer posting</li>
+      </ul>
+    </header>
+
+    <form name="signupForm" ng-submit="submitSignup()" novalidate>
+      <div class="form-inputs">
+        <section class="standard-inputs">
+          <h6>Contact Details</h6>
+          <div class="form-group sc-form-group"
+               ng-class="{'has-error' : (signupForm.companyName.$invalid && showValidation)}">
+            <label for="company-name">Company Name</label>
+            <input contenteditable="true" class="form-control" type="text" name="companyName" id="company-name"
+                   placeholder="* Company Name" ng-model="signup.companyName"
+                   ng-minlength="2" maxlength="50" required/>
+          </div>
+          <div class="form-group sc-form-group"
+               ng-class="{'has-error' : (signupForm.emailAddress.$invalid && showValidation)}">
+            <label for="email-address">Email Address</label>
+            <input class="form-control sc-small-input" type="text"
+                   placeholder="{{!showValidation ? '* Email address' : 'e.g. you@yourcompany.com'}}"
+                   name="emailAddress" id="email-address" ng-model="signup.companyEmail"
+                   ng-pattern="/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/igm" ng-minlength="5" ng-maxlength="45" required>
+          </div>
+          <div class="form-group sc-form-group"
+               ng-class="{'has-error' : (signupForm.phoneNum.$invalid && showValidation)}">
+            <label for="phone-num">Company Phone Number</label>
+            <input class="form-control sc-small-input" type="number"
+                   placeholder="* Company phone number"
+                   name="phoneNum" id="phone-num" ng-model="signup.phoneNum" ng-minlength="11" ng-maxlength="11" required>
+          </div>
+          <h6>Company Information</h6>
+          <div class="form-group sc-form-group"
+               ng-class="{'has-error' : (signupForm.description.$invalid && showValidation)}">
+            <label class="long-label" for="description">Company Description</label>
+            <textarea class="form-control sc-large-input" type="text" rows="3"
+                      placeholder="* Short company description/overview"
+                      name="description" id="description" ng-model="signup.description"
+                      ng-maxlength="255" required></textarea>
+          </div>
+          <div class="form-group sc-form-group"
+               ng-class="{'has-error' : (signupForm.businessCategory.$error.required && showValidation)}">
+            <label for="business-category">Business Category</label>
+            <select id="business-category" class="form-control" name="businessCategory" class="Sitedropdown"
+                    ng-model="signup.type"
+                    ng-options="o for o in types"
+                    required>
+              <option value="">* Select Business Category</option>
+            </select>
+            <!--<span ng-show="signupForm.businessCategory.$error.required">You must choose a category from the list</span>-->
+          </div>
+        </section>
+        <section class="timepicker-group">
+          <div class="sc-timepicker">
+            <span class="timepicker-label">Opening Time</span>
+
+            <timepicker class="timepick" ng-model="signup.openingTime" ng-change="changed()" hour-step="hstep"
+                        minute-step="mstep"
+                        show-meridian="ismeridian"></timepicker>
+          </div>
+          <div class="sc-timepicker">
+            <span class="timepicker-label">Closing Time</span>
+            <timepicker class="timepick" ng-model="signup.closingTime" ng-change="changed()" hour-step="hstep"
+                        minute-step="mstep"
+                        show-meridian="ismeridian"></timepicker>
+          </div>
+        </section>
+        <section class="standard-inputs">
+          <div class="form-group sc-form-group"
+               ng-class="{'has-error' : (signupForm.webURL.$invalid && showValidation)}">
+            <label for="web-url">Company Website</label>
+            <input class="form-control" type="text"
+                   placeholder="* Company web URL"
+                   name="webURL" id="web-url" ng-model="signup.websiteURL" ng-minlength="6" ng-maxlength="100" required>
+          </div>
+        </section>
+      </div>
+      <section class="submit-buttons">
+        <button type="submit">Sign Up</button>
+        <button ui-sref="notloggedin">Cancel</button>
+      </section>
+    </form>
+  </div>
+</div>
