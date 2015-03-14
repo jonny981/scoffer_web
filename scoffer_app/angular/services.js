@@ -1,5 +1,4 @@
 'use strict';
-
 scofferApp.factory('album', ['$rootScope', '$resource',
   function($rootScope, $resource){
     var url = $.cloudinary.url('myphotoalbum', {format: 'json', type: 'list'});
