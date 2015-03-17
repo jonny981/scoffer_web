@@ -49,5 +49,4 @@ if ($result->num_rows > 0) {
 
 print json_encode($rows);
 $con->close();
-
 ?>
