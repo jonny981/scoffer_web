@@ -2,19 +2,22 @@
  * Created by Jonny on 04/12/2014.
  */
 
-scofferApp.controller('LoggedinCtrl', ['$scope', '$rootScope', '$location', '$upload', '$log',
-  function($scope, $rootScope, $location, $upload, $log) {
+scofferApp.controller('LoggedinCtrl', ['$scope', '$rootScope', '$location', '$upload', '$log', 'loginService', '$state',
+  function ($scope, $rootScope, $location, $upload, $log, loginService, $state) {
 
-    //var loggedin = true;
-    //
-    //$scope.$emit('updateParentCtrl',loggedin);
+    if (!loginService.isLoggedIn()) {
+      $state.go('notloggedin');
+    } else {
+      $scope.currentUser = loginService.getCurrentUser();
+      $log.error(JSON.stringify($scope.currentUser, null, 4));
+    }
 
     $scope.offerDetails = {
       title: '',
       businessName: '',
       details: '',
       startDate: new Date(),
-      endDate: new Date()
+      endDate: moment(new Date()).add(3, 'day').format('DD-MM-YYYY')
     };
 
     $scope.today = function() {
@@ -26,8 +29,9 @@ scofferApp.controller('LoggedinCtrl', ['$scope', '$rootScope', '$location', '$up
       $scope.dt = null;
     };
 
+    $scope.maxDuration = moment($scope.offerDetails.startDate).add(7, 'day');
     $scope.toggleMin = function() {
-      $scope.minDate = $scope.minDate ? null : new Date();
+      $scope.minDate = $scope.minDate ? null : moment();
     };
     $scope.toggleMin();
 
@@ -48,13 +52,11 @@ scofferApp.controller('LoggedinCtrl', ['$scope', '$rootScope', '$location', '$up
     };
 
     $scope.dateOptions = {
-      formatYear: 'yy',
+      formatYear: 'yyyy',
       startingDay: 1
     };
 
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[0];
-
+    $scope.format = 'dd-MM-yyyy';
 
     $scope.$watch('files', function() {
       $scope.uploadedURL = null;

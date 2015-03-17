@@ -1,106 +1,141 @@
 <div id="loggedin-landing">
     <div id="postoffer">
-        <section>
-            <h2>Post an offer!</h2>
-        </section>
-        <p>You can create an unlimited quantity of offers but all offers must be designated an expiry date
-            and may be removed at any time by Scoffer if they are deemed to be inappropriate or misleading.
-            Any duplicate offers will be removed.
-            <br><br>Scoffer will only recognise offers related to the food and drink industry.
-            <br><br>Note that offers are not redeemed through the scoffer app, exchange of monetary sums are
-            restricted to point of sale.</p>
-        <section>
-            <span>Title</span>
-            <textarea type="text" maxlength="100" id="offertitle" placeholder="offer title"
-                      ng-model="offerDetails.title"></textarea>
-            <i class="glyphicon glyphicon-question-sign"
-               tooltip="This is the main title of your offer. This will identify your offer in the app's main news feed"
-               tooltip-placement="right"></i>
-        </section>
-        <section>
-            <span>Details</span>
-            <textarea type="text" maxlength="255" id="offerdetail" placeholder="offer detail"
-                      ng-model="offerDetails.detail"></textarea>
-            <i class="glyphicon glyphicon-question-sign"
-               tooltip="This is the text that will show when a user taps your offer to find out more information"
-               tooltip-placement="right"></i>
-        </section>
+        <header>
+            <h2><span class="fa fa-paper-plane"></span> Post an offer!</h2>
 
-        <div class="sc-datepicker row">
-            <span class="sc-datepicker-label">Start Date</span>
+            <p>You can create an unlimited quantity of offers but all offers must be designated an expiry date
+                and may be removed at any time by Scoffer if they are deemed to be inappropriate or misleading.
+                Any duplicate offers will be removed.</p>
 
-            <div class="sc-datepicker-input">
-                <p class="input-group">
-                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt"
-                           is-open="openedStart"
-                           min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"
-                           date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="datePickerStart($event)"><i
-                        class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-                </p>
-            </div>
-            <i class="glyphicon glyphicon-question-sign"
-               tooltip="The offer start date, this can be any day from the current date onwards"
-               tooltip-placement="right"></i>
-        </div>
-        <div class="sc-datepicker row">
-            <span class="sc-datepicker-label">End Date</span>
+            <p>Scoffer will only recognise offers related to the food and drink industry.</p>
 
-            <div class="sc-datepicker-input">
-                <p class="input-group">
-                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt"
-                           is-open="openedEnd"
-                           min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"
-                           date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="datePickerEnd($event)"><i
-                        class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-                </p>
-            </div>
-            <i class="glyphicon glyphicon-question-sign"
-               tooltip="The offer end date, this is a maximum of 7 days from the offer start date"
-               tooltip-placement="right"></i>
-        </div>
+            <p>Note that offers are not redeemed through the scoffer app, exchange of monetary sums are
+                restricted to point of sale.</p>
+        </header>
 
-        <section>
-            <div id="direct_upload" ng-file-drop ng-file-drag-over-class="dragOverClass($event)" ng-model="files"
-                 ng-multiple="false">
-                <p>Image Upload. You don't have to upload an image to post your offer, but it is recommended to help
-                    your offer stand out.</p>
+        <form name="postOfferForm" ng-submit="" novalidate>
+            <div class="form-inputs">
+                <section class="standard-inputs">
+                    <span class="divider"><h6>Offer Details</h6></span>
 
-                <div class="form_controls">
-                    <div class="upload_button_holder">
-                        <button class="upload_button" ng-file-select ng-multiple="false"
-                                title="upload" resetOnClick="true" ng-model="files"><span
-                                class="fa fa-cloud-upload"></span> Upload
-                        </button>
+                    <div class="form-group sc-form-group"
+                         ng-class="{'has-error' : (postOfferForm.offerTitle.$invalid)}">
+                        <label for="offer-title">Offer Title</label>
+                        <input class="form-control" type="text" name="offerTitle"
+                               id="offer-title"
+                               placeholder="* Offer Title" ng-model="offerDetails.title"
+                               ng-minlength="5" maxlength="45" required/>
+                        <i class="glyphicon glyphicon-question-sign"
+                           tooltip="This is the main title of your offer. This will identify your offer in the app's main news feed"
+                           tooltip-placement="right"></i>
                     </div>
+                    <div class="form-group sc-form-group"
+                         ng-class="{'has-error' : (postOfferForm.offerDetail.$invalid)}">
+                        <label for="offer-detail">Offer Details/Description</label>
+                        <textarea class="form-control sc-large-input" type="text" rows="3"
+                                  placeholder="* Offer Detail"
+                                  name="offerDetail" id="offer-detail" ng-model="offerDetails.detail"
+                                  ng-maxlength="255" required></textarea>
+                        <i class="glyphicon glyphicon-question-sign"
+                           tooltip="This is the text that will show when a user taps your offer to find out more information"
+                           tooltip-placement="right"></i>
+                    </div>
+                </section>
+
+                <section class="dp-inputs">
+                    <span class="divider"><h6>Offer Duration</h6></span>
+
+                    <div class="form-group sc-form-group">
+                        <label class="sc-datepicker-label">Start Date</label>
+
+                        <div class="sc-datepicker-input">
+                            <p class="input-group"><input type="text" class="form-control" datepicker-popup="{{format}}"
+                                                          ng-model="offerDetails.startDate"
+                                                          is-open="openedStart"
+                                                          min-date="minDate" max-date="'2015-06-22'"
+                                                          datepicker-options="dateOptions"
+                                                          date-disabled="disabled(date, mode)" ng-required="true"
+                                                          close-text="Close"/>
+                                 <span class="input-group-btn">
+                                     <button type="button" class="btn btn-default" ng-click="datePickerStart($event)"><i
+                                             class="glyphicon glyphicon-calendar"></i></button>
+                                 </span>
+                            </p>
+                        </div>
+                        <i class="glyphicon glyphicon-question-sign"
+                           tooltip="The offer start date, this can be any day from the current date onwards"
+                           tooltip-placement="right"></i>
+                    </div>
+
+                    <div class="form-group sc-form-group">
+                        <label class="sc-datepicker-label">End Date</label>
+
+                        <div class="sc-datepicker-input">
+                            <p class="input-group"><input type="text" class="form-control" datepicker-popup="{{format}}"
+                                                          ng-model="offerDetails.endDate"
+                                                          is-open="openedEnd"
+                                                          min-date="offerDetails.startDate" max-date="maxDuration"
+                                                          datepicker-options="dateOptions"
+                                                          date-disabled="disabled(date, mode)" ng-required="true"
+                                                          close-text="Close"/>
+                                 <span class="input-group-btn">
+                                     <button type="button" class="btn btn-default" ng-click="datePickerEnd($event)"><i
+                                             class="glyphicon glyphicon-calendar"></i></button>
+                                 </span>
+                            </p>
+                        </div>
+                        <i class="glyphicon glyphicon-question-sign"
+                           tooltip="The offer end date, this can be within one week from the start date"
+                           tooltip-placement="right"></i>
+                    </div>
+                </section>
+
+                <section class="standard-inputs">
+                    <span class="divider"><h6>Offer Image</h6></span>
+
+                    <div id="direct_upload" ng-file-drop ng-file-drag-over-class="dragOverClass($event)"
+                         ng-model="files"
+                         ng-multiple="false">
+
+                        <div id="message-holder">
+                            <span id="instruction">Drag and drop image here or click the upload button</span>
+                            <span id="file-icon" class="fa fa-file-image-o"></span>
+                        </div>
+
+                        <p>Image Upload - You don't have to upload an image to post your offer, but it is recommended to
+                            help
+                            your offer stand out.</p>
+
+                        <div class="form_controls">
+                            <div class="upload_button_holder">
+                                <button class="upload_button" ng-file-select ng-multiple="false"
+                                        title="upload" resetOnClick="true" ng-model="files"><span
+                                        class="fa fa-cloud-upload"></span> Upload
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div ng-repeat="file in files">
+                    <progressbar animate="true" value="file.progress"
+                                 type="{{file.progress === 100 ? 'success' : 'error'}}">
+                        <b>{{file.progress}}%</b>
+                    </progressbar>
+                    <img id="preview" ng-src="{{uploadedURL}}">
+                    <span id="progress-message">{{file.progress === 100 ? file.name + ' Uploaded Successfully.' : ''}}</span>
+                    <span ng-if="file.progress === 100"> If you want to change this image simply upload again and the previous image will be overwritten.</span>
                 </div>
+
             </div>
-        </section>
-
-        <div ng-repeat="file in files">
-            <progressbar animate="true" value="file.progress"
-                         type="{{file.progress === 100 ? 'success' : 'error'}}">
-                <b>{{file.progress}}%</b>
-            </progressbar>
-            <img id="preview" ng-src="{{uploadedURL}}">
-            <span id="progress-message">{{file.progress === 100 ? file.name + ' Uploaded Successfully' : file.progress + '%'}}</span>
-        </div>
-
-
-        <section>
-            <div>
+            <section class="submit-buttons">
                 <p>By posting an offer you agree to Scoffer terms and conditions, and that your offer will be subject to
                     removal
                     if it contains any content that is deemed inappropriate by Scoffer or any other users.</p>
-                <button>Preview Offer</button>
-                <button>Post Offer</button>
-            </div>
-        </section>
+                <button><span class="fa fa-search"></span> Preview Offer</button>
+                <button type="submit"><span class="fa fa-paper-plane"></span> Post Offer</button>
+            </section>
+        </form>
     </div>
 </div>
 

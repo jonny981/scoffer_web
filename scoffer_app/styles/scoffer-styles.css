@@ -6841,18 +6841,22 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-#loggedin-landing #postoffer section:before,
-#loggedin-landing #postoffer section:after,
+#loggedin-landing #postoffer .form-inputs .divider:before,
+#loggedin-landing #postoffer .form-inputs .divider:after,
+#loggedin-landing #postoffer .form-inputs .standard-inputs:before,
+#loggedin-landing #postoffer .form-inputs .standard-inputs:after,
+#loggedin-landing #postoffer .form-inputs .timepicker-group:before,
+#loggedin-landing #postoffer .form-inputs .timepicker-group:after,
+#loggedin-landing #postoffer .dp-inputs:before,
+#loggedin-landing #postoffer .dp-inputs:after,
+#signup-page #signup-form form .form-inputs .divider:before,
+#signup-page #signup-form form .form-inputs .divider:after,
 #signup-page #signup-form form .form-inputs .standard-inputs:before,
 #signup-page #signup-form form .form-inputs .standard-inputs:after,
 #signup-page #signup-form form .form-inputs .timepicker-group:before,
 #signup-page #signup-form form .form-inputs .timepicker-group:after,
-#signup-page .error:before,
-#signup-page .error:after,
-.landingdiv1:before,
-.landingdiv1:after,
-.landingdiv2:before,
-.landingdiv2:after {
+footer #footer-container:before,
+footer #footer-container:after {
   content: " ";
   display: table;
 }
@@ -6871,12 +6875,14 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-#loggedin-landing #postoffer section:after,
+#loggedin-landing #postoffer .form-inputs .divider:after,
+#loggedin-landing #postoffer .form-inputs .standard-inputs:after,
+#loggedin-landing #postoffer .form-inputs .timepicker-group:after,
+#loggedin-landing #postoffer .dp-inputs:after,
+#signup-page #signup-form form .form-inputs .divider:after,
 #signup-page #signup-form form .form-inputs .standard-inputs:after,
 #signup-page #signup-form form .form-inputs .timepicker-group:after,
-#signup-page .error:after,
-.landingdiv1:after,
-.landingdiv2:after {
+footer #footer-container:after {
   clear: both;
 }
 .center-block {
@@ -7127,47 +7133,51 @@ button.close {
   font-family: Blenda;
   src: url('fonts/Blenda-script.otf');
 }
+
+@font-face {
+  font-family: Delicious;
+  src: url('fonts/Delicious-Roman.otf');
+}
+
+@font-face {
+  font-family: Delicious-Caps;
+  src: url('fonts/Delicious-SmallCaps.otf');
+}
+
+.form-control::-webkit-input-placeholder,
+[ng-model=hours],
+[ng-model=minutes],
+#business-category {
+  font-size: small !important;
+  font-weight: normal;
+}
+
+[ng-model] {
+  font-weight: normal;
+}
+
+.has-error .form-control::-webkit-input-placeholder,
+.has-error select {
+  color: #a60000 !important;
+}
+
+.has-error option {
+  color: #000000 !important;
+}
+
+.form-group label,
+.form-group input {
+  display: inline;
+}
+
 #loggedin-landing {
-  background-color: #c93055;
+  padding-top: 0px !important;
+  border-top: 10px solid #c93055;
   min-height: 750px !important;
   padding-top: 10px;
   padding-bottom: 10px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-}
-#loggedin-landing #posterframe {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-#loggedin-landing .actions {
-  margin: 20px 0;
-}
-#loggedin-landing .upload_link {
-  color: #000;
-  border: 1px solid #aaa;
-  background-color: #e0e0e0;
-  font-size: 18px;
-  height: 20px;
-  padding: 5px 10px;
-  width: 250px;
-  margin: 10px 0 20px 0;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px;
-}
-#loggedin-landing .photo {
-  margin: 10px;
-  padding: 10px;
-  border-top: 2px solid #ccc;
-}
-#loggedin-landing .photo .thumbnail {
-  margin-top: 10px;
-  display: block;
-  max-width: 200px;
-  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 #loggedin-landing .toggle_info {
   margin-top: 10px;
@@ -7175,30 +7185,33 @@ button.close {
   color: #e62401;
   display: block;
 }
-#loggedin-landing .thumbnail_holder {
-  height: 182px;
-  margin-bottom: 5px;
-  margin-right: 10px;
-}
-#loggedin-landing .info td,
-#loggedin-landing .uploaded_info td {
-  font-size: 12px;
-}
 #loggedin-landing .note {
   margin: 20px 0;
 }
 #loggedin-landing .inline {
   display: inline-block;
 }
-#loggedin-landing td {
-  vertical-align: top;
-  padding-right: 5px;
-}
 #loggedin-landing #direct_upload {
   padding: 20px 40px;
   margin: 20px 20px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+}
+
+#loggedin-landing #direct_upload #message-holder {
+  padding-bottom: 15px;
+}
+
+#loggedin-landing #direct_upload #message-holder #file-icon {
+  float: right;
+  margin-top: -15px;
+  margin-right: -30px;
+}
+
+#loggedin-landing #direct_upload #message-holder #instruction {
+  color: lightgray;
+  font-size: x-small;
+  float: left;
+  margin-top: -15px;
+  margin-left: -30px;
 }
 #loggedin-landing #direct_upload_jquery h1,
 #loggedin-landing #direct_upload h1 {
@@ -7209,28 +7222,6 @@ button.close {
   display: block;
   font-size: 16px;
   margin: 10px 0;
-}
-#loggedin-landing form {
-  border: 1px solid #ddd;
-  margin: 15px 0;
-  padding: 15px 0;
-  border-radius: 4px;
-}
-#loggedin-landing form .form_line {
-  margin-bottom: 20px;
-}
-#loggedin-landing form .form_controls {
-  margin-left: 180px;
-}
-#loggedin-landing form label {
-  float: left;
-  width: 160px;
-  padding-top: 3px;
-  text-align: right;
-}
-#loggedin-landing form .error {
-  color: #c55;
-  margin: 0 10px;
 }
 #loggedin-landing #direct_upload,
 #loggedin-landing #direct_upload_jquery {
@@ -7243,12 +7234,6 @@ button.close {
 #loggedin-landing #direct_upload.dragover-err {
   border-color: #c00;
   background-color: rgba(237, 111, 109, 0.67);
-}
-#loggedin-landing .upload_details {
-  font-size: 12px;
-  margin: 20px;
-  border-top: 1px solid #ccc;
-  word-wrap: break-word;
 }
 #loggedin-landing .upload_button_holder {
   position: relative;
@@ -7267,13 +7252,15 @@ button.close {
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding: 6px 30px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 0px;
   color: #ffffff;
   background-color: #337ab7;
   border-color: #2e6da4;
@@ -7373,201 +7360,312 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
 }
 @media (min-width: 768px) {
   #loggedin-landing {
-    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
-@media (min-width: 768px) {
-  #loggedin-landing {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-#loggedin-landing #postoffer {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  margin-right: 10px;
-  margin-left: 10px;
-}
-#loggedin-landing #postoffer blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
-}
-@media (max-width: 767px) {
-  #loggedin-landing #postoffer .glyphicon-question-sign {
-    display: none !important;
-  }
-}
-@media (min-width: 768px) {
-  #loggedin-landing #postoffer {
-    margin-right: 50px;
-    margin-left: 50px;
-  }
-}
+
 @media (min-width: 992px) {
-  #loggedin-landing #postoffer {
-    margin-right: 100px;
-    margin-left: 100px;
+  #loggedin-landing {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
-#loggedin-landing #postoffer h2 {
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+
+@media (min-width: 1200px) {
+  #loggedin-landing {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
+
+#loggedin-landing .sc-error {
+  padding-top: 20px;
+}
+
+#loggedin-landing header {
+  padding-bottom: 15px;
+  border-bottom: 5px solid #c93055;
+  font-size: medium;
+}
+@media (min-width: 768px) {
+  #loggedin-landing header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+#loggedin-landing header h2 {
   font-family: Blenda;
   padding: 0px;
   margin: 0px;
   text-align: center;
 }
-#loggedin-landing #postoffer section {
-  margin-bottom: 20px;
+
+#loggedin-landing header p:first-of-type {
+  margin-top: 20px;
+}
+
+#loggedin-landing #postoffer {
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+#loggedin-landing #postoffer .form-inputs .divider {
   margin-left: -15px;
   margin-right: -15px;
 }
-#loggedin-landing #postoffer section textarea {
-  display: block;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555555;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+#loggedin-landing #postoffer .form-inputs .divider h6 {
+  padding-bottom: 10px;
+  margin: 30px 0 30px 0;
+  font-size: small;
+  border-bottom: 1px dotted;
+  font-family: Delicious-Caps;
   position: relative;
   float: left;
   width: 100%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  display: inline;
 }
-#loggedin-landing #postoffer section textarea:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+
+@media (min-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs .divider h6 {
+    padding-left: 0px !important;
+  }
 }
-#loggedin-landing #postoffer section textarea::-moz-placeholder {
-  color: #999999;
-  opacity: 1;
+
+#loggedin-landing #postoffer .form-inputs .divider:first-of-type {
+  margin: 0 0 30px 0;
 }
-#loggedin-landing #postoffer section textarea:-ms-input-placeholder {
-  color: #999999;
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs {
+  margin-left: -15px;
+  margin-right: -15px;
 }
-#loggedin-landing #postoffer section textarea::-webkit-input-placeholder {
-  color: #999999;
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs .sc-form-group {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-#loggedin-landing #postoffer section textarea[disabled],
-#loggedin-landing #postoffer section textarea[readonly],
-fieldset[disabled] #loggedin-landing #postoffer section textarea {
-  cursor: not-allowed;
-  background-color: #eeeeee;
-  opacity: 1;
-}
-textarea#loggedin-landing #postoffer section textarea {
-  height: auto;
-}
-#loggedin-landing #postoffer section span:first-child {
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs label {
+  line-height: normal;
+  padding-left: 0px !important;
+  top: 5px;
+  font-family: Delicious-Caps;
   float: left;
   width: 100%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  font-size: large;
+}
+
+@media (max-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs .standard-inputs label {
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs .standard-inputs label {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #loggedin-landing #postoffer .form-inputs .standard-inputs label {
+    float: left;
+    width: 25%;
+  }
+}
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs select {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs .standard-inputs select {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs input,
+#loggedin-landing #postoffer .form-inputs .standard-inputs textarea {
+  line-height: normal;
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 @media (min-width: 768px) {
-  #loggedin-landing #postoffer section span:first-child {
+  #loggedin-landing #postoffer .form-inputs .standard-inputs input,
+  #loggedin-landing #postoffer .form-inputs .standard-inputs textarea {
     float: left;
-    width: 29.16666667%;
+    width: 50%;
   }
 }
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs .long-label {
+  line-height: normal;
+}
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs .sc-xs-input {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-xs-input {
+    float: left;
+    width: 20.83333333%;
+  }
+}
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs .sc-small-input {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-small-input {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+
+#loggedin-landing #postoffer .form-inputs .standard-inputs .sc-large-input {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-large-input {
+    float: left;
+    width: 58.33333333%;
+  }
+}
+
+#loggedin-landing #postoffer .form-inputs .timepicker-group {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 0px;
+}
+
+#loggedin-landing #postoffer .form-inputs .timepicker-group div {
+  float: left;
+  width: 50%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 @media (min-width: 1200px) {
-  #loggedin-landing #postoffer section span:first-child {
+  #loggedin-landing #postoffer .form-inputs .timepicker-group div {
     float: left;
-    width: 16.66666667%;
+    width: 41.66666667%;
   }
 }
+
+#loggedin-landing #postoffer .form-inputs .timepicker-group div .timepicker-label {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 0px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  #loggedin-landing #postoffer .form-inputs .timepicker-group div .timepicker-label {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #loggedin-landing #postoffer .form-inputs .timepicker-group div .timepicker-label {
+    float: left;
+    width: 62.5%;
+  }
+}
+
 @media (min-width: 992px) {
-  #loggedin-landing #postoffer section span:first-child {
-    margin-left: 4.16666667%;
+  #loggedin-landing #postoffer .form-inputs .timepicker-group div .timepicker-label {
+    line-height: 101px;
   }
 }
-#loggedin-landing #postoffer section i {
-  padding-left: 10px;
+
+#loggedin-landing #postoffer .form-inputs .timepicker-group div + div {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-#loggedin-landing #postoffer section + p {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-top: 1px dotted;
-  border-bottom: 1px dotted;
+
+@media (min-width: 1200px) {
+  #loggedin-landing #postoffer .form-inputs .timepicker-group div + div {
+    float: left;
+    width: 50%;
+  }
 }
-#loggedin-landing #postoffer section:nth-child(3) {
+
+#loggedin-landing #postoffer .form-inputs .timepicker-group div + div .timepicker-label {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 992px) {
+  #loggedin-landing #postoffer .form-inputs .timepicker-group div + div .timepicker-label {
+    float: left;
+    width: 45.83333333%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #loggedin-landing #postoffer .form-inputs .timepicker-group div + div .timepicker-label {
+    float: left;
+    width: 37.5%;
+  }
+}
+
+#loggedin-landing #postoffer .submit-buttons {
+  text-align: center;
+  border-top: 5px solid #c93055;
+  padding: 30px 20px 30px 20px;
   margin-top: 20px;
 }
-#loggedin-landing #postoffer section:nth-child(3) textarea {
-  float: left;
-  width: 100%;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  resize: none;
-}
-@media (min-width: 768px) {
-  #loggedin-landing #postoffer section:nth-child(3) textarea {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-@media (min-width: 992px) {
-  #loggedin-landing #postoffer section:nth-child(3) textarea {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-#loggedin-landing #postoffer section:nth-child(4) textarea {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 100px;
-  resize: vertical;
-}
-@media (min-width: 768px) {
-  #loggedin-landing #postoffer section:nth-child(4) textarea {
-    float: left;
-    width: 66.66666667%;
-  }
-}
-#loggedin-landing #postoffer section:nth-child(5) {
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-#loggedin-landing #postoffer section:last-child {
-  text-align: center;
-  margin-top: 15px;
-}
-#loggedin-landing #postoffer section:last-child button {
+
+#loggedin-landing #postoffer .submit-buttons button {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -7579,40 +7677,49 @@ textarea#loggedin-landing #postoffer section textarea {
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding: 6px 30px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 0px;
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
 }
-#loggedin-landing #postoffer section:last-child button:focus,
-#loggedin-landing #postoffer section:last-child button:active:focus,
-#loggedin-landing #postoffer section:last-child button.active:focus,
-#loggedin-landing #postoffer section:last-child button.focus,
-#loggedin-landing #postoffer section:last-child button:active.focus,
-#loggedin-landing #postoffer section:last-child button.active.focus {
+
+#loggedin-landing #postoffer .submit-buttons button:focus,
+#loggedin-landing #postoffer .submit-buttons button:active:focus,
+#loggedin-landing #postoffer .submit-buttons button.active:focus,
+#loggedin-landing #postoffer .submit-buttons button.focus,
+#loggedin-landing #postoffer .submit-buttons button:active.focus,
+#loggedin-landing #postoffer .submit-buttons button.active.focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-#loggedin-landing #postoffer section:last-child button:hover,
-#loggedin-landing #postoffer section:last-child button:focus,
-#loggedin-landing #postoffer section:last-child button.focus {
+
+#loggedin-landing #postoffer .submit-buttons button:hover,
+#loggedin-landing #postoffer .submit-buttons button:focus,
+#loggedin-landing #postoffer .submit-buttons button.focus {
   color: #333333;
   text-decoration: none;
 }
-#loggedin-landing #postoffer section:last-child button:active,
-#loggedin-landing #postoffer section:last-child button.active {
+
+#loggedin-landing #postoffer .submit-buttons button:active,
+#loggedin-landing #postoffer .submit-buttons button.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-#loggedin-landing #postoffer section:last-child button.disabled,
-#loggedin-landing #postoffer section:last-child button[disabled],
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button {
+
+#loggedin-landing #postoffer .submit-buttons button.disabled,
+#loggedin-landing #postoffer .submit-buttons button[disabled],
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -7620,145 +7727,157 @@ fieldset[disabled] #loggedin-landing #postoffer section:last-child button {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type {
-  color: #ffffff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
-}
-#loggedin-landing #postoffer section:last-child button:first-of-type:hover,
-#loggedin-landing #postoffer section:last-child button:first-of-type:focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type.focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type:active,
-#loggedin-landing #postoffer section:last-child button:first-of-type.active,
-.open > .dropdown-toggle#loggedin-landing #postoffer section:last-child button:first-of-type {
+
+#loggedin-landing #postoffer .submit-buttons button:hover,
+#loggedin-landing #postoffer .submit-buttons button:focus,
+#loggedin-landing #postoffer .submit-buttons button.focus,
+#loggedin-landing #postoffer .submit-buttons button:active,
+#loggedin-landing #postoffer .submit-buttons button.active,
+.open > .dropdown-toggle#loggedin-landing #postoffer .submit-buttons button {
   color: #ffffff;
   background-color: #31b0d5;
   border-color: #269abc;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type:active,
-#loggedin-landing #postoffer section:last-child button:first-of-type.active,
-.open > .dropdown-toggle#loggedin-landing #postoffer section:last-child button:first-of-type {
+
+#loggedin-landing #postoffer .submit-buttons button:active,
+#loggedin-landing #postoffer .submit-buttons button.active,
+.open > .dropdown-toggle#loggedin-landing #postoffer .submit-buttons button {
   background-image: none;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type.disabled,
-#loggedin-landing #postoffer section:last-child button:first-of-type[disabled],
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type,
-#loggedin-landing #postoffer section:last-child button:first-of-type.disabled:hover,
-#loggedin-landing #postoffer section:last-child button:first-of-type[disabled]:hover,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type:hover,
-#loggedin-landing #postoffer section:last-child button:first-of-type.disabled:focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type[disabled]:focus,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type:focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type.disabled.focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type[disabled].focus,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type.focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type.disabled:active,
-#loggedin-landing #postoffer section:last-child button:first-of-type[disabled]:active,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type:active,
-#loggedin-landing #postoffer section:last-child button:first-of-type.disabled.active,
-#loggedin-landing #postoffer section:last-child button:first-of-type[disabled].active,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type.active {
+
+#loggedin-landing #postoffer .submit-buttons button.disabled,
+#loggedin-landing #postoffer .submit-buttons button[disabled],
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button,
+#loggedin-landing #postoffer .submit-buttons button.disabled:hover,
+#loggedin-landing #postoffer .submit-buttons button[disabled]:hover,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:hover,
+#loggedin-landing #postoffer .submit-buttons button.disabled:focus,
+#loggedin-landing #postoffer .submit-buttons button[disabled]:focus,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:focus,
+#loggedin-landing #postoffer .submit-buttons button.disabled.focus,
+#loggedin-landing #postoffer .submit-buttons button[disabled].focus,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button.focus,
+#loggedin-landing #postoffer .submit-buttons button.disabled:active,
+#loggedin-landing #postoffer .submit-buttons button[disabled]:active,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:active,
+#loggedin-landing #postoffer .submit-buttons button.disabled.active,
+#loggedin-landing #postoffer .submit-buttons button[disabled].active,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button.active {
   background-color: #5bc0de;
   border-color: #46b8da;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type .badge {
+
+#loggedin-landing #postoffer .submit-buttons button .badge {
   color: #5bc0de;
   background-color: #ffffff;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type + button {
+
+#loggedin-landing #postoffer .submit-buttons button:last-child {
   color: #ffffff;
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type + button:hover,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button:focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button:active,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.active,
-.open > .dropdown-toggle#loggedin-landing #postoffer section:last-child button:first-of-type + button {
+
+#loggedin-landing #postoffer .submit-buttons button:last-child:hover,
+#loggedin-landing #postoffer .submit-buttons button:last-child:focus,
+#loggedin-landing #postoffer .submit-buttons button:last-child.focus,
+#loggedin-landing #postoffer .submit-buttons button:last-child:active,
+#loggedin-landing #postoffer .submit-buttons button:last-child.active,
+.open > .dropdown-toggle#loggedin-landing #postoffer .submit-buttons button:last-child {
   color: #ffffff;
   background-color: #286090;
   border-color: #204d74;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type + button:active,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.active,
-.open > .dropdown-toggle#loggedin-landing #postoffer section:last-child button:first-of-type + button {
+
+#loggedin-landing #postoffer .submit-buttons button:last-child:active,
+#loggedin-landing #postoffer .submit-buttons button:last-child.active,
+.open > .dropdown-toggle#loggedin-landing #postoffer .submit-buttons button:last-child {
   background-image: none;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.disabled,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button[disabled],
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type + button,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.disabled:hover,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button[disabled]:hover,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type + button:hover,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.disabled:focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button[disabled]:focus,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type + button:focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.disabled.focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button[disabled].focus,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type + button.focus,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.disabled:active,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button[disabled]:active,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type + button:active,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button.disabled.active,
-#loggedin-landing #postoffer section:last-child button:first-of-type + button[disabled].active,
-fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-of-type + button.active {
+
+#loggedin-landing #postoffer .submit-buttons button:last-child.disabled,
+#loggedin-landing #postoffer .submit-buttons button:last-child[disabled],
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-child,
+#loggedin-landing #postoffer .submit-buttons button:last-child.disabled:hover,
+#loggedin-landing #postoffer .submit-buttons button:last-child[disabled]:hover,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-child:hover,
+#loggedin-landing #postoffer .submit-buttons button:last-child.disabled:focus,
+#loggedin-landing #postoffer .submit-buttons button:last-child[disabled]:focus,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-child:focus,
+#loggedin-landing #postoffer .submit-buttons button:last-child.disabled.focus,
+#loggedin-landing #postoffer .submit-buttons button:last-child[disabled].focus,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-child.focus,
+#loggedin-landing #postoffer .submit-buttons button:last-child.disabled:active,
+#loggedin-landing #postoffer .submit-buttons button:last-child[disabled]:active,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-child:active,
+#loggedin-landing #postoffer .submit-buttons button:last-child.disabled.active,
+#loggedin-landing #postoffer .submit-buttons button:last-child[disabled].active,
+fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-child.active {
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-#loggedin-landing #postoffer section:last-child button:first-of-type + button .badge {
+
+#loggedin-landing #postoffer .submit-buttons button:last-child .badge {
   color: #337ab7;
   background-color: #ffffff;
 }
-#loggedin-landing #postoffer section:last-child div {
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+
+#loggedin-landing #postoffer .glyphicon-question-sign {
+  padding-left: 20px;
 }
-#loggedin-landing #postoffer section:last-child p:first-child {
-  padding-top: 30px;
-  border-top: 1px dotted;
-}
-#loggedin-landing #postoffer section:last-child p + p {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-@media (min-width: 992px) {
-  #loggedin-landing #postoffer section:last-child p + p {
-    margin-left: 150px;
-    margin-right: 150px;
+
+@media (max-width: 767px) {
+  #loggedin-landing #postoffer .glyphicon-question-sign {
+    display: none !important;
   }
 }
-#loggedin-landing #postoffer .sc-datepicker-label {
+
+#loggedin-landing #postoffer .dp-inputs {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+#loggedin-landing #postoffer .dp-inputs .sc-form-group {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#loggedin-landing #postoffer .dp-inputs .sc-datepicker-label {
+  line-height: normal;
+  padding-left: 0px !important;
+  top: 5px;
+  font-family: Delicious-Caps;
   float: left;
   width: 100%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  font-size: large;
+}
+
+@media (max-width: 768px) {
+  #loggedin-landing #postoffer .dp-inputs .sc-datepicker-label {
+    padding-bottom: 10px;
+  }
 }
 @media (min-width: 768px) {
-  #loggedin-landing #postoffer .sc-datepicker-label {
+  #loggedin-landing #postoffer .dp-inputs .sc-datepicker-label {
     float: left;
-    width: 29.16666667%;
+    width: 41.66666667%;
   }
 }
 @media (min-width: 1200px) {
-  #loggedin-landing #postoffer .sc-datepicker-label {
+  #loggedin-landing #postoffer .dp-inputs .sc-datepicker-label {
     float: left;
-    width: 16.66666667%;
+    width: 25%;
   }
 }
-@media (min-width: 992px) {
-  #loggedin-landing #postoffer .sc-datepicker-label {
-    margin-left: 4.16666667%;
-  }
-}
-#loggedin-landing #postoffer .sc-datepicker-input {
+
+#loggedin-landing #postoffer .dp-inputs .sc-datepicker-input {
   float: left;
   width: 100%;
   position: relative;
@@ -7768,83 +7887,58 @@ fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-
   padding-left: 0px;
 }
 @media (min-width: 768px) {
-  #loggedin-landing #postoffer .sc-datepicker-input {
+  #loggedin-landing #postoffer .dp-inputs .sc-datepicker-input {
     float: left;
     width: 50%;
   }
 }
 @media (min-width: 992px) {
-  #loggedin-landing #postoffer .sc-datepicker-input {
+  #loggedin-landing #postoffer .dp-inputs .sc-datepicker-input {
     float: left;
     width: 33.33333333%;
   }
 }
 #signup-page {
-  background-color: #c93055;
+  border-top: 10px solid #c93055;
   min-height: 750px !important;
   padding-top: 10px;
   padding-bottom: 10px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
+  padding-left: 15px;
+  padding-right: 15px;
 }
 @media (min-width: 768px) {
   #signup-page {
-    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
-@media (min-width: 768px) {
-  #signup-page {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-#signup-page .form-group label,
-#signup-page .form-group input {
-  display: inline;
-}
-#signup-page #signup-form {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  margin-right: 10px;
-  margin-left: 10px;
-}
-#signup-page #signup-form blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
-}
-@media (min-width: 768px) {
-  #signup-page #signup-form {
-    padding-left: 30px;
-  }
-}
-@media (min-width: 768px) {
-  #signup-page #signup-form {
-    padding-left: 15px;
-    margin-right: 50px;
-    margin-left: 50px;
-  }
-}
+
 @media (min-width: 992px) {
-  #signup-page #signup-form {
-    margin-right: 100px;
-    margin-left: 100px;
+  #signup-page {
+    padding-left: 10%;
+    padding-right: 10%;
   }
+}
+
+@media (min-width: 1200px) {
+  #signup-page {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
+
+#signup-page #signup-form .sc-error {
+  padding-top: 20px;
 }
 #signup-page #signup-form header {
   padding-bottom: 15px;
-  border-bottom: 1px solid;
+  border-bottom: 5px solid #c93055;
   font-size: medium;
 }
 @media (min-width: 768px) {
   #signup-page #signup-form header {
-    padding-left: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 #signup-page #signup-form header h2 {
@@ -7861,22 +7955,38 @@ fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-
 }
 @media (min-width: 768px) {
   #signup-page #signup-form form .form-inputs {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
-#signup-page #signup-form form .form-inputs h6 {
-  padding-left: 0px !important;
+
+#signup-page #signup-form form .form-inputs .divider {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+#signup-page #signup-form form .form-inputs .divider h6 {
   padding-bottom: 10px;
-  margin-bottom: 30px;
+  margin: 30px 0 30px 0;
   font-size: small;
   border-bottom: 1px dotted;
+  font-family: Delicious-Caps;
   position: relative;
   float: left;
   width: 100%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  #signup-page #signup-form form .form-inputs .divider h6 {
+    padding-left: 0px !important;
+  }
+}
+
+#signup-page #signup-form form .form-inputs .divider:first-of-type {
+  margin: 0 0 30px 0;
 }
 #signup-page #signup-form form .form-inputs .standard-inputs {
   margin-left: -15px;
@@ -7893,12 +8003,20 @@ fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-
 #signup-page #signup-form form .form-inputs .standard-inputs label {
   line-height: normal;
   padding-left: 0px !important;
+  top: 5px;
+  font-family: Delicious-Caps;
   float: left;
   width: 100%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+  #signup-page #signup-form form .form-inputs .standard-inputs label {
+    padding-bottom: 10px;
+  }
 }
 @media (min-width: 768px) {
   #signup-page #signup-form form .form-inputs .standard-inputs label {
@@ -7943,6 +8061,20 @@ fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-
 }
 #signup-page #signup-form form .form-inputs .standard-inputs .long-label {
   line-height: normal;
+}
+
+#signup-page #signup-form form .form-inputs .standard-inputs .sc-xs-input {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  #signup-page #signup-form form .form-inputs .standard-inputs .sc-xs-input {
+    float: left;
+    width: 20.83333333%;
+  }
 }
 #signup-page #signup-form form .form-inputs .standard-inputs .sc-small-input {
   position: relative;
@@ -8046,8 +8178,9 @@ fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-
 }
 #signup-page #signup-form form .submit-buttons {
   text-align: center;
-  border-top: 1px solid;
-  padding-top: 10px;
+  border-top: 5px solid #c93055;
+  padding: 30px 20px 30px 20px;
+  margin-top: 20px;
 }
 #signup-page #signup-form form .submit-buttons button {
   display: inline-block;
@@ -8061,13 +8194,18 @@ fieldset[disabled] #loggedin-landing #postoffer section:last-child button:first-
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding: 6px 30px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 0px;
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
 }
 #signup-page #signup-form form .submit-buttons button:focus,
 #signup-page #signup-form form .submit-buttons button:active:focus,
@@ -8102,193 +8240,150 @@ fieldset[disabled] #signup-page #signup-form form .submit-buttons button {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-#signup-page #signup-form form .submit-buttons button:nth-child(1) {
-  color: #ffffff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-}
-#signup-page #signup-form form .submit-buttons button:nth-child(1):hover,
-#signup-page #signup-form form .submit-buttons button:nth-child(1):focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(1).focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(1):active,
-#signup-page #signup-form form .submit-buttons button:nth-child(1).active,
-.open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button:nth-child(1) {
-  color: #ffffff;
-  background-color: #286090;
-  border-color: #204d74;
-}
-#signup-page #signup-form form .submit-buttons button:nth-child(1):active,
-#signup-page #signup-form form .submit-buttons button:nth-child(1).active,
-.open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button:nth-child(1) {
-  background-image: none;
-}
-#signup-page #signup-form form .submit-buttons button:nth-child(1).disabled,
-#signup-page #signup-form form .submit-buttons button:nth-child(1)[disabled],
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(1),
-#signup-page #signup-form form .submit-buttons button:nth-child(1).disabled:hover,
-#signup-page #signup-form form .submit-buttons button:nth-child(1)[disabled]:hover,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(1):hover,
-#signup-page #signup-form form .submit-buttons button:nth-child(1).disabled:focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(1)[disabled]:focus,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(1):focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(1).disabled.focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(1)[disabled].focus,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(1).focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(1).disabled:active,
-#signup-page #signup-form form .submit-buttons button:nth-child(1)[disabled]:active,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(1):active,
-#signup-page #signup-form form .submit-buttons button:nth-child(1).disabled.active,
-#signup-page #signup-form form .submit-buttons button:nth-child(1)[disabled].active,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(1).active {
-  background-color: #337ab7;
-  border-color: #2e6da4;
-}
-#signup-page #signup-form form .submit-buttons button:nth-child(1) .badge {
-  color: #337ab7;
-  background-color: #ffffff;
-}
-#signup-page #signup-form form .submit-buttons button:nth-child(2) {
-  color: #ffffff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
-}
-#signup-page #signup-form form .submit-buttons button:nth-child(2):hover,
-#signup-page #signup-form form .submit-buttons button:nth-child(2):focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(2).focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(2):active,
-#signup-page #signup-form form .submit-buttons button:nth-child(2).active,
-.open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button:nth-child(2) {
+
+#signup-page #signup-form form .submit-buttons button:hover,
+#signup-page #signup-form form .submit-buttons button:focus,
+#signup-page #signup-form form .submit-buttons button.focus,
+#signup-page #signup-form form .submit-buttons button:active,
+#signup-page #signup-form form .submit-buttons button.active,
+.open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button {
   color: #ffffff;
   background-color: #31b0d5;
   border-color: #269abc;
 }
-#signup-page #signup-form form .submit-buttons button:nth-child(2):active,
-#signup-page #signup-form form .submit-buttons button:nth-child(2).active,
-.open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button:nth-child(2) {
+
+#signup-page #signup-form form .submit-buttons button:active,
+#signup-page #signup-form form .submit-buttons button.active,
+.open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button {
   background-image: none;
 }
-#signup-page #signup-form form .submit-buttons button:nth-child(2).disabled,
-#signup-page #signup-form form .submit-buttons button:nth-child(2)[disabled],
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(2),
-#signup-page #signup-form form .submit-buttons button:nth-child(2).disabled:hover,
-#signup-page #signup-form form .submit-buttons button:nth-child(2)[disabled]:hover,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(2):hover,
-#signup-page #signup-form form .submit-buttons button:nth-child(2).disabled:focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(2)[disabled]:focus,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(2):focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(2).disabled.focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(2)[disabled].focus,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(2).focus,
-#signup-page #signup-form form .submit-buttons button:nth-child(2).disabled:active,
-#signup-page #signup-form form .submit-buttons button:nth-child(2)[disabled]:active,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(2):active,
-#signup-page #signup-form form .submit-buttons button:nth-child(2).disabled.active,
-#signup-page #signup-form form .submit-buttons button:nth-child(2)[disabled].active,
-fieldset[disabled] #signup-page #signup-form form .submit-buttons button:nth-child(2).active {
+
+#signup-page #signup-form form .submit-buttons button.disabled,
+#signup-page #signup-form form .submit-buttons button[disabled],
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button,
+#signup-page #signup-form form .submit-buttons button.disabled:hover,
+#signup-page #signup-form form .submit-buttons button[disabled]:hover,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:hover,
+#signup-page #signup-form form .submit-buttons button.disabled:focus,
+#signup-page #signup-form form .submit-buttons button[disabled]:focus,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:focus,
+#signup-page #signup-form form .submit-buttons button.disabled.focus,
+#signup-page #signup-form form .submit-buttons button[disabled].focus,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button.focus,
+#signup-page #signup-form form .submit-buttons button.disabled:active,
+#signup-page #signup-form form .submit-buttons button[disabled]:active,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:active,
+#signup-page #signup-form form .submit-buttons button.disabled.active,
+#signup-page #signup-form form .submit-buttons button[disabled].active,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button.active {
   background-color: #5bc0de;
   border-color: #46b8da;
 }
-#signup-page #signup-form form .submit-buttons button:nth-child(2) .badge {
+
+#signup-page #signup-form form .submit-buttons button .badge {
   color: #5bc0de;
   background-color: #ffffff;
 }
-#signup-page .error {
-  background-color: rgba(255, 12, 2, 0.51);
-  text-align: left;
-  top: -40px !important;
-  margin: -15px -15px 15px -15px;
-  border-radius: 5px;
-  border: 1px solid #e6e6e6;
-  padding: 5px;
-  margin-left: -15px;
-  margin-right: -15px;
-  -webkit-box-shadow: inset 0px 0px 4px 0px rgba(255, 95, 95, 0.75);
-  -moz-box-shadow: inset 0px 0px 4px 0px rgba(255, 95, 95, 0.75);
-  box-shadow: inset 0px 0px 4px 0px rgba(254, 255, 254, 0.84);
-  transition: .25s linear;
-  height: 40px;
-  overflow: hidden;
+
+#signup-page #signup-form form .submit-buttons button:last-child {
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
 }
-#signup-page .error .info {
-  font-size: x-large;
-  position: relative;
-  float: left;
-  width: 4.16666667%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  top: -1px;
-  left: -10px;
-  color: rgba(121, 121, 121, 0.59);
-  line-height: 30px;
+
+#signup-page #signup-form form .submit-buttons button:last-child:hover,
+#signup-page #signup-form form .submit-buttons button:last-child:focus,
+#signup-page #signup-form form .submit-buttons button:last-child.focus,
+#signup-page #signup-form form .submit-buttons button:last-child:active,
+#signup-page #signup-form form .submit-buttons button:last-child.active,
+.open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button:last-child {
+  color: #ffffff;
+  background-color: #286090;
+  border-color: #204d74;
 }
-#signup-page .error h5 {
-  float: left;
-  width: 70.83333333%;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  color: rgba(121, 121, 121, 0.87);
+
+#signup-page #signup-form form .submit-buttons button:last-child:active,
+#signup-page #signup-form form .submit-buttons button:last-child.active,
+.open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button:last-child {
+  background-image: none;
 }
-@media (min-width: 768px) {
-  #signup-page .error h5 {
-    float: left;
-    width: 83.33333333%;
-  }
+
+#signup-page #signup-form form .submit-buttons button:last-child.disabled,
+#signup-page #signup-form form .submit-buttons button:last-child[disabled],
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:last-child,
+#signup-page #signup-form form .submit-buttons button:last-child.disabled:hover,
+#signup-page #signup-form form .submit-buttons button:last-child[disabled]:hover,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:last-child:hover,
+#signup-page #signup-form form .submit-buttons button:last-child.disabled:focus,
+#signup-page #signup-form form .submit-buttons button:last-child[disabled]:focus,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:last-child:focus,
+#signup-page #signup-form form .submit-buttons button:last-child.disabled.focus,
+#signup-page #signup-form form .submit-buttons button:last-child[disabled].focus,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:last-child.focus,
+#signup-page #signup-form form .submit-buttons button:last-child.disabled:active,
+#signup-page #signup-form form .submit-buttons button:last-child[disabled]:active,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:last-child:active,
+#signup-page #signup-form form .submit-buttons button:last-child.disabled.active,
+#signup-page #signup-form form .submit-buttons button:last-child[disabled].active,
+fieldset[disabled] #signup-page #signup-form form .submit-buttons button:last-child.active {
+  background-color: #337ab7;
+  border-color: #2e6da4;
 }
-@media (min-width: 768px) {
-  #signup-page .error h5 {
-    line-height: 30px;
-  }
-}
-#signup-page .error button {
-  position: relative;
-  float: left;
-  width: 8.33333333%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  float: right;
-  font-size: 20px;
-  text-align: right;
-}
-#signup-page .error button span {
-  line-height: 30px;
-  margin-right: -15px;
-}
-#signup-page .error.ng-hide {
-  height: 0px;
-  opacity: 0;
-}
-html {
-  background-color: #ecedec;
+
+#signup-page #signup-form form .submit-buttons button:last-child .badge {
+  color: #337ab7;
+  background-color: #ffffff;
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #ecedec;
-  background-image: url('../resources/symphony.png');
+  font-family: Delicious;
+  font-weight: normal;
+  background-color: #ffffff;
+}
+
+.form-control {
+  border-radius: 0px;
 }
 .navbar {
   border-radius: 0px !important;
   margin-bottom: 0px;
-  -webkit-box-shadow: 1px -14px 23px 15px rgba(0, 0, 0, 0.65);
-  -moz-box-shadow: 0px -14px 23px 15px rgba(0, 0, 0, 0.65);
-  box-shadow: 0px -14px 23px 15px rgba(0, 0, 0, 0.65);
 }
 .navbar-brand {
   font-family: Blenda;
   font-size: xx-large;
-  margin-left: 0px;
+  padding-left: 25px;
 }
-.nav a {
-  height: 40px !important;
+
+@media (max-width: 768px) {
+  .navbar-nav a:hover {
+    background-color: rgba(157, 157, 157, 0.35) !important;
+  }
+}
+
+.navbar-nav li > a {
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .navbar-nav li > a {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
+
+.navbar-right li > a {
+  padding-top: 0px;
+  line-height: 30px !important;
 }
 @media (min-width: 768px) {
-  .nav a {
-    height: 50px !important;
+  .navbar-right li > a {
+    padding-top: 10px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-right li > a {
+    text-align: center;
+    border-bottom: none;
   }
 }
 .navbar-right img {
@@ -8296,154 +8391,207 @@ body {
   width: auto;
   margin-left: 10px;
 }
-@media (max-width: 767px) {
-  .navbar-right img {
-    display: none !important;
-  }
-}
 .navbar-right span {
   font-family: Blenda;
 }
+
+.container-fluid {
+  padding-top: 0px !important;
+}
 @media (min-width: 768px) {
   .container-fluid {
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
-.body-container {
-  background-color: #c93055;
-  -webkit-box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.6);
-  box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.6);
-}
-@media (min-width: 768px) {
-  .body-container {
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 384px !important;
+
+@media (min-width: 992px) {
+  .container-fluid {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
-.landingdiv1 {
-  margin-left: -15px;
-  margin-right: -15px;
-  background-color: #c93055;
-  height: 334px !important;
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
 }
-.landingdiv1 h1 {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+
+#signin #signin-top {
+  width: 100%;
+  text-shadow: 2px 2px 2px rgba(101, 27, 48, 0.8);
+  background-color: #c93055;
+}
+
+#signin #signin-top #welcome p {
+  padding-top: 25px;
+  margin-bottom: -10px;
+  margin-left: -25px;
+  text-align: center;
+  color: white;
+  font-family: Delicious-Caps;
+  font-size: 20px;
+}
+
+#signin #signin-top h1 {
   font-family: Blenda;
   color: #ffffff;
-  text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.8);
-  font-size: 80px;
-  text-align: left;
+  font-size: 90px;
+  text-align: center;
+  padding-top: 25px;
+  margin: 0;
 }
 @media (min-width: 768px) {
-  .landingdiv1 h1 {
-    float: left;
-    width: 33.33333333%;
+  #signin #signin-top h1 {
+    font-size: 120px;
   }
 }
-@media (min-width: 768px) {
-  .landingdiv1 h1 {
-    float: left;
-    width: 37.5%;
-  }
-}
-@media (min-width: 768px) {
-  .landingdiv1 h1 {
-    margin-left: 8.33333333%;
-  }
-}
-@media (max-width: 767px) {
-  .landingdiv1 h1 {
-    display: none !important;
-  }
-}
-@media (min-width: 768px) {
-  .landingdiv1 h1 {
-    padding-top: 65px;
-    font-size: 100px;
-  }
-}
+
 @media (min-width: 992px) {
-  .landingdiv1 h1 {
+  #signin #signin-top h1 {
     font-size: 140px;
-    padding-left: 60px;
   }
 }
-@media (min-width: 1200px) {
-  .landingdiv1 h1 {
-    text-align: left;
-    padding-left: 120px;
-    font-size: 150px;
+
+#signin #signin-top h1 span {
+  padding-left: 15px;
+  font-size: 20px;
+  font-family: Delicious;
+  text-shadow: none;
+}
+
+#signin #signin-top h1 + p {
+  padding: 5% 15px 5% 15px;
+  font-family: Delicious-Caps;
+  color: #ffffff;
+  text-align: center;
+  font-size: 25px;
+}
+@media (min-width: 768px) {
+  #signin #signin-top h1 + p {
+    padding: 5% 0 2% 0;
+    font-size: 30px;
   }
 }
-.landingdiv1 #login-area {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  float: left;
-  width: 100%;
-  position: relative;
-  min-height: 1px;
+
+@media (min-width: 992px) {
+  #signin #signin-top h1 + p {
+    font-size: 35px;
+  }
+}
+
+#signin #signin-bottom {
+  padding-top: 30px;
   padding-left: 15px;
   padding-right: 15px;
-  border: 1px solid #919291;
-  padding: 30px;
-  margin-right: 50px;
-  font-size: larger !important;
-  margin-top: 30px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-}
-.landingdiv1 #login-area blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
 }
 @media (min-width: 768px) {
-  .landingdiv1 #login-area {
-    float: left;
-    width: 41.66666667%;
+  #signin #signin-bottom {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 @media (min-width: 992px) {
-  .landingdiv1 #login-area {
-    float: left;
-    width: 33.33333333%;
+  #signin #signin-bottom {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 @media (min-width: 1200px) {
-  .landingdiv1 #login-area {
-    float: left;
-    width: 25%;
+  #signin #signin-bottom {
+    padding-left: 17%;
+    padding-right: 17%;
   }
+}
+
+#signin #signin-bottom #navlinks {
+  text-align: center;
+}
+
+#signin #signin-bottom #navlinks span {
+  width: 25px;
+  cursor: pointer;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  #signin #signin-bottom #navlinks span i {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  #signin #signin-bottom #navlinks span {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+#signin #signin-bottom #navlinks span:hover {
+  color: lightgray;
+}
+
+#signin #signin-bottom #navlinks span:nth-child(2) {
+  border-left: 1px dotted;
+  border-right: 1px dotted;
+}
+
+#signin #signin-bottom #navlinks span:nth-child(3) {
+  border-right: 1px dotted;
+}
+
+#signin #signin-bottom form {
+  padding-top: 30px;
+}
+
+#signin #signin-bottom form section {
+  width: 100%;
 }
 @media (min-width: 768px) {
-  .landingdiv1 #login-area {
-    margin-left: 4.16666667%;
+  #signin #signin-bottom form section {
+    width: 670px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
-@media (min-width: 992px) {
-  .landingdiv1 #login-area {
-    margin-left: 8.33333333%;
+
+#signin #signin-bottom form label {
+  font-family: Delicious-Caps;
+  padding-right: 10px;
+}
+
+#signin #signin-bottom form div {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  #signin #signin-bottom form div {
+    width: 100%;
   }
 }
-.landingdiv1 #login-area .input-group {
-  margin-bottom: 8px !important;
+
+@media (min-width: 768px) {
+  #signin #signin-bottom form div:nth-child(2) {
+    padding-left: 20px;
+  }
 }
-.landingdiv1 #login-area button {
+
+#signin #signin-bottom form div:nth-child(3) {
+  padding-left: 20px;
+  text-align: center;
+}
+
+#signin #signin-bottom form div:nth-child(3) button {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: small;
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -8455,43 +8603,49 @@ body {
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding: 6px 30px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 0px;
   color: #ffffff;
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-.landingdiv1 #login-area button:focus,
-.landingdiv1 #login-area button:active:focus,
-.landingdiv1 #login-area button.active:focus,
-.landingdiv1 #login-area button.focus,
-.landingdiv1 #login-area button:active.focus,
-.landingdiv1 #login-area button.active.focus {
+
+#signin #signin-bottom form div:nth-child(3) button:focus,
+#signin #signin-bottom form div:nth-child(3) button:active:focus,
+#signin #signin-bottom form div:nth-child(3) button.active:focus,
+#signin #signin-bottom form div:nth-child(3) button.focus,
+#signin #signin-bottom form div:nth-child(3) button:active.focus,
+#signin #signin-bottom form div:nth-child(3) button.active.focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.landingdiv1 #login-area button:hover,
-.landingdiv1 #login-area button:focus,
-.landingdiv1 #login-area button.focus {
+
+#signin #signin-bottom form div:nth-child(3) button:hover,
+#signin #signin-bottom form div:nth-child(3) button:focus,
+#signin #signin-bottom form div:nth-child(3) button.focus {
   color: #333333;
   text-decoration: none;
 }
-.landingdiv1 #login-area button:active,
-.landingdiv1 #login-area button.active {
+
+#signin #signin-bottom form div:nth-child(3) button:active,
+#signin #signin-bottom form div:nth-child(3) button.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.landingdiv1 #login-area button.disabled,
-.landingdiv1 #login-area button[disabled],
-fieldset[disabled] .landingdiv1 #login-area button {
+
+#signin #signin-bottom form div:nth-child(3) button.disabled,
+#signin #signin-bottom form div:nth-child(3) button[disabled],
+fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -8499,279 +8653,219 @@ fieldset[disabled] .landingdiv1 #login-area button {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.landingdiv1 #login-area button:hover,
-.landingdiv1 #login-area button:focus,
-.landingdiv1 #login-area button.focus,
-.landingdiv1 #login-area button:active,
-.landingdiv1 #login-area button.active,
-.open > .dropdown-toggle.landingdiv1 #login-area button {
+
+#signin #signin-bottom form div:nth-child(3) button:hover,
+#signin #signin-bottom form div:nth-child(3) button:focus,
+#signin #signin-bottom form div:nth-child(3) button.focus,
+#signin #signin-bottom form div:nth-child(3) button:active,
+#signin #signin-bottom form div:nth-child(3) button.active,
+.open > .dropdown-toggle#signin #signin-bottom form div:nth-child(3) button {
   color: #ffffff;
   background-color: #286090;
   border-color: #204d74;
 }
-.landingdiv1 #login-area button:active,
-.landingdiv1 #login-area button.active,
-.open > .dropdown-toggle.landingdiv1 #login-area button {
+
+#signin #signin-bottom form div:nth-child(3) button:active,
+#signin #signin-bottom form div:nth-child(3) button.active,
+.open > .dropdown-toggle#signin #signin-bottom form div:nth-child(3) button {
   background-image: none;
 }
-.landingdiv1 #login-area button.disabled,
-.landingdiv1 #login-area button[disabled],
-fieldset[disabled] .landingdiv1 #login-area button,
-.landingdiv1 #login-area button.disabled:hover,
-.landingdiv1 #login-area button[disabled]:hover,
-fieldset[disabled] .landingdiv1 #login-area button:hover,
-.landingdiv1 #login-area button.disabled:focus,
-.landingdiv1 #login-area button[disabled]:focus,
-fieldset[disabled] .landingdiv1 #login-area button:focus,
-.landingdiv1 #login-area button.disabled.focus,
-.landingdiv1 #login-area button[disabled].focus,
-fieldset[disabled] .landingdiv1 #login-area button.focus,
-.landingdiv1 #login-area button.disabled:active,
-.landingdiv1 #login-area button[disabled]:active,
-fieldset[disabled] .landingdiv1 #login-area button:active,
-.landingdiv1 #login-area button.disabled.active,
-.landingdiv1 #login-area button[disabled].active,
-fieldset[disabled] .landingdiv1 #login-area button.active {
+
+#signin #signin-bottom form div:nth-child(3) button.disabled,
+#signin #signin-bottom form div:nth-child(3) button[disabled],
+fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button,
+#signin #signin-bottom form div:nth-child(3) button.disabled:hover,
+#signin #signin-bottom form div:nth-child(3) button[disabled]:hover,
+fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button:hover,
+#signin #signin-bottom form div:nth-child(3) button.disabled:focus,
+#signin #signin-bottom form div:nth-child(3) button[disabled]:focus,
+fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button:focus,
+#signin #signin-bottom form div:nth-child(3) button.disabled.focus,
+#signin #signin-bottom form div:nth-child(3) button[disabled].focus,
+fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button.focus,
+#signin #signin-bottom form div:nth-child(3) button.disabled:active,
+#signin #signin-bottom form div:nth-child(3) button[disabled]:active,
+fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button:active,
+#signin #signin-bottom form div:nth-child(3) button.disabled.active,
+#signin #signin-bottom form div:nth-child(3) button[disabled].active,
+fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button.active {
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-.landingdiv1 #login-area button .badge {
+
+#signin #signin-bottom form div:nth-child(3) button .badge {
   color: #337ab7;
   background-color: #ffffff;
 }
-.landingdiv1 #login-area button + span {
-  margin-left: 10px;
+
+#signin #signin-bottom form input {
+  width: 100%;
 }
-.landingdiv1 #login-area button + span a {
-  font-size: small;
+@media (min-width: 768px) {
+  #signin #signin-bottom form input {
+    width: 170px;
+  }
 }
-.landingdiv2 {
+
+#signin #signin-bottom #error-messages {
+  text-align: center;
+  color: #c93055;
+}
+
+#signin #signin-bottom #learnmore {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+#signin #signin-bottom #learnmore h3 {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: Delicious-Caps;
+}
+
+.error {
+  position: absolute;
+  width: 100%;
+  background-color: #dcdcdc;
+  text-align: left;
+  top: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: .25s linear;
+  height: 40px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .error {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .error {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .error {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
+
+.error .info {
+  color: #c93055;
+  font-size: large;
+  line-height: 30px;
+}
+
+.error h5 {
+  display: inline !important;
+  font-size: medium;
+  font-weight: 200;
+  line-height: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #ffffff;
+  text-align: center;
+  left: auto;
+  right: auto;
+  padding-left: 15px;
+}
+
+.error button {
+  display: inline !important;
+  font-size: 20px;
+  text-align: right;
+}
+
+.error button span {
+  color: #c93055;
+  line-height: 30px;
+}
+
+.error.ng-hide {
+  height: 0px;
+  opacity: 0;
+}
+
+footer {
+  padding-top: 15px;
+  margin-top: 25px;
+  left: 0px;
+  min-height: 50px;
+  bottom: 0px;
+  background-color: #dcdcdc;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+@media (min-width: 992px) {
+  footer {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+@media (min-width: 1200px) {
+  footer {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
+
+footer #footer-container {
   margin-left: -15px;
   margin-right: -15px;
-  background-image: url("test.jpg");
-  background-repeat: no-repeat;
-  height: 384px !important;
 }
-.landingdiv2 #signup-container {
+
+footer #footer-container span {
   float: left;
   width: 100%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  margin-top: 40px;
-}
-@media (min-width: 768px) {
-  .landingdiv2 #signup-container {
-    float: left;
-    width: 79.16666667%;
-  }
-}
-.landingdiv2 #signup-container blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
-}
-@media (min-width: 768px) {
-  .landingdiv2 #signup-container {
-    margin-left: 10%;
-  }
-}
-.landingdiv2 #signup {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .landingdiv2 #signup {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-.landingdiv2 #signup button {
-  margin-top: 20px;
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
+  padding-bottom: 10px;
+  display: block;
   text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #333333;
-  background-color: #ffffff;
-  border-color: #cccccc;
-}
-.landingdiv2 #signup button:focus,
-.landingdiv2 #signup button:active:focus,
-.landingdiv2 #signup button.active:focus,
-.landingdiv2 #signup button.focus,
-.landingdiv2 #signup button:active.focus,
-.landingdiv2 #signup button.active.focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.landingdiv2 #signup button:hover,
-.landingdiv2 #signup button:focus,
-.landingdiv2 #signup button.focus {
-  color: #333333;
-  text-decoration: none;
-}
-.landingdiv2 #signup button:active,
-.landingdiv2 #signup button.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-.landingdiv2 #signup button.disabled,
-.landingdiv2 #signup button[disabled],
-fieldset[disabled] .landingdiv2 #signup button {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.landingdiv2 #signup button:hover,
-.landingdiv2 #signup button:focus,
-.landingdiv2 #signup button.focus,
-.landingdiv2 #signup button:active,
-.landingdiv2 #signup button.active,
-.open > .dropdown-toggle.landingdiv2 #signup button {
-  color: #333333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
-}
-.landingdiv2 #signup button:active,
-.landingdiv2 #signup button.active,
-.open > .dropdown-toggle.landingdiv2 #signup button {
-  background-image: none;
-}
-.landingdiv2 #signup button.disabled,
-.landingdiv2 #signup button[disabled],
-fieldset[disabled] .landingdiv2 #signup button,
-.landingdiv2 #signup button.disabled:hover,
-.landingdiv2 #signup button[disabled]:hover,
-fieldset[disabled] .landingdiv2 #signup button:hover,
-.landingdiv2 #signup button.disabled:focus,
-.landingdiv2 #signup button[disabled]:focus,
-fieldset[disabled] .landingdiv2 #signup button:focus,
-.landingdiv2 #signup button.disabled.focus,
-.landingdiv2 #signup button[disabled].focus,
-fieldset[disabled] .landingdiv2 #signup button.focus,
-.landingdiv2 #signup button.disabled:active,
-.landingdiv2 #signup button[disabled]:active,
-fieldset[disabled] .landingdiv2 #signup button:active,
-.landingdiv2 #signup button.disabled.active,
-.landingdiv2 #signup button[disabled].active,
-fieldset[disabled] .landingdiv2 #signup button.active {
-  background-color: #ffffff;
-  border-color: #cccccc;
-}
-.landingdiv2 #signup button .badge {
-  color: #ffffff;
-  background-color: #333333;
-}
-@media (min-width: 992px) {
-  .landingdiv2 #signup {
-    margin-left: 10%;
-  }
-}
-.landingdiv2 #home-carousel {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 20px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-@media (max-width: 767px) {
-  .landingdiv2 #home-carousel {
-    display: none !important;
-  }
 }
 @media (min-width: 768px) {
-  .landingdiv2 #home-carousel {
-    float: left;
-    width: 58.33333333%;
-  }
-}
-@media (min-width: 992px) {
-  .landingdiv2 #home-carousel {
-    float: left;
-    width: 41.66666667%;
-  }
-}
-@media (min-width: 1200px) {
-  .landingdiv2 #home-carousel {
+  footer #footer-container span {
     float: left;
     width: 33.33333333%;
   }
 }
-@media (min-width: 992px) {
-  .landingdiv2 #home-carousel {
-    margin-left: 12.5%;
-  }
-}
-#loggedin {
-  background-color: #c93055;
-  min-height: 750px !important;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-}
 @media (min-width: 768px) {
-  #loggedin {
-    padding-top: 30px;
+  footer #footer-container span {
+    text-align: left;
+    display: inline;
+    padding-bottom: 0px;
   }
 }
 @media (min-width: 768px) {
-  #loggedin {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-#about {
-  background-color: #c93055;
-  min-height: 750px !important;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-}
-@media (min-width: 768px) {
-  #about {
-    padding-top: 30px;
+  footer #footer-container span:nth-child(2) {
+    text-align: center;
   }
 }
 @media (min-width: 768px) {
-  #about {
-    margin-left: 10%;
-    margin-right: 10%;
+  footer #footer-container span:nth-child(3) {
+    text-align: right;
   }
+}
+
+footer #footer-container span:nth-child(3) i {
+  cursor: pointer;
+  padding-left: 3px;
+}
+
+footer #footer-container span:nth-child(3) i:hover {
+  color: #ffffff;
 }

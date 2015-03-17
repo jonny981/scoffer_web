@@ -1,26 +1,72 @@
 /**
  * Created by Jonny on 16/11/2014.
  */
-scofferApp.controller('HomeCtrl', function ($scope) {
+scofferApp.controller('HomeCtrl', function ($scope, $http, $log, loginService, $state, $location, $anchorScroll) {
 
-  $scope.loggedin = {
-    toggle: false
-  }
+    $scope.isCollapsed = true;
 
-  //$scope.$on('updateParentCtrl', function (event, loggedin){
-  //  $scope.loggedin.toggle = loggedin;
-  //})
+    $scope.$watch(function () {
+        return loginService.isLoggedIn();
+    }, function () {
+        $scope.loggedIn = loginService.isLoggedIn();
+    }, false);
 
-  $scope.testme = function(){
-    console.log($scope.loggedin.toggle);
-  }
+    $scope.logOut = function () {
+        loginService.logout();
+    };
 
-  $scope.myInterval = 5000;
-  $scope.isCollapsed = true;
+    $scope.loginDetails = {
+        email: '',
+        password: ''
+    };
 
-  var slides = $scope.slides = [];
-  slides.push({image: 'resources/carousel1.png'});
-  slides.push({image: 'resources/carousel2.png'})
+    $scope.gotoAnchor = function (elementID) {
+        var newHash = elementID;
+        if ($location.hash() !== newHash) {
+            // set the $location.hash to `newHash` and
+            // $anchorScroll will automatically scroll to it
+            $location.hash(elementID);
+        } else {
+            // call $anchorScroll() explicitly,
+            // since $location.hash hasn't changed
+            $anchorScroll();
+        }
+    };
 
-});
+    $scope.goToAbout = function () {
+        $state.go('notloggedin');
+        $scope.gotoAnchor('learnmore');
+    }
+
+    $scope.signin = function () {
+        if (true) {
+            loginService.login($scope.loginDetails).then(function (response) {
+                    $scope.showValidation = true;
+                    $log.error(JSON.stringify(response));
+                    if (response.data.validUser !== 'undefined') {
+                        if (response.data.validDetails === true) {
+                            $log.info('INFO - login Successful');
+                            $scope.loggedInUser = response.data;
+                            $scope.errorType = null;
+                            $state.go('loggedinlanding');
+                        } else if (response.data.validDetails === false && response.data.validUser === true) {
+                            $log.error('ERROR - Invalid login details');
+                            $scope.errorType = 'invalid';
+                        } else if (response.data.validUser === false) {
+                            $log.error('ERROR - Email address not registered');
+                            $scope.errorType = 'notregistered';
+                        }
+                    } else {
+                        $log.error('ERROR - Server unreachable');
+                        $scope.errorType = 'server';
+                    }
+                }
+            ), function () {
+                $log.error('ERROR - Server unreachable');
+                $scope.errorType = 'server';
+            };
+        }
+    };
+})
+;
 

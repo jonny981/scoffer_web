@@ -1,37 +1,96 @@
-<div class="landingdiv1">
-  <h1>Scoffer</h1>
+<div id="signin">
+    <div id="signin-top">
+        <!--<div id="welcome"><p>Welcome To</p></div>-->
+        <h1>Scoffer</h1>
 
-  <div class="login-form" id="login-area">
-    <h3>Existing User? Login to begin posting!</h3>
+        <p>The newest daily deals company, with a difference.</p>
+    </div>
+    <div id="signin-bottom">
+        <nav id="navlinks">
+            <span ng-click="goToAbout()"><i class="fa fa-book fa-2x"></i> Learn More</span>
+            <span ng-show="loggedIn" ui-sref="loggedinlanding"><i class="fa fa-paper-plane fa-2x"></i> Post Offer</span>
+            <span ng-show="loggedIn"><i class="fa fa-user fa-2x"></i> My Offers</span>
+            <span ng-show="loggedIn" ng-click="logOut()"><i class="fa fa-sign-out fa-2x"></i> Log Out</span>
+            <span ng-hide="loggedIn" ui-sref="signup"><i class="fa fa-pencil-square-o fa-2x"></i> Sign Up</span>
+            <span ng-hide="loggedIn" ng-click="isCollapsed = !isCollapsed"><i
+                    class="fa fa-sign-in fa-2x"></i> Login</span>
+        </nav>
+        <section id="signin-form" collapse="isCollapsed">
+            <form name="signinForm" ng-submit="signin()" novalidate>
+                <section>
+                    <div class="form-group"
+                         ng-class="{'has-error' : (signinForm.emailAddress.$invalid && showValidation)}">
+                        <label for="email-address">Email Address</label>
+                        <input class="form-control sc-small-input" type="text"
+                               placeholder="Email Address"
+                               name="emailAddress" id="email-address" ng-model="loginDetails.email"
+                               ng-minlength="5"
+                               ng-maxlength="45"
+                               required>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{'has-error' : (signinForm.password.$invalid && showValidation)}">
+                        <label for="password">Password</label>
+                        <input class="form-control sc-small-input" type="password" name="password"
+                               id="password"
+                               placeholder="Password" ng-model="loginDetails.password"
+                               ng-minlength="8" maxlength="12" required/>
+                    </div>
+                    <div>
+                        <button type="submit"><i class="fa fa-sign-in"></i> Login</button>
+                    </div>
+                </section>
+            </form>
+            <section ng-hide="loggedIn" id="error-messages">
+                <p ng-show="errorType === 'invalid'"><i class="fa fa-lock"></i> The login details you entered are
+                    incorrect - please try again.</p>
 
-    <div class="input-group">
-      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-      <input type="text" class="form-control" placeholder="Username">
-    </div>
-    <div class="input-group">
-      <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-      <input type="text" class="form-control" placeholder="Password">
-    </div>
-    <button ui-sref="loggedinlanding" ng-click="loggedin.toggle = true; testme()">Sign in</button>
-    <span><a>Forgotton your login details?</a></span>
-  </div>
-</div>
+                <p ng-show="errorType === 'notregistered'"><i class="fa fa-lock"></i> This email address is not
+                    currently registered with scoffer - please sign up to create an account.</p>
 
-<div class="landingdiv2">
-  <div id="signup-container">
-    <div id="signup">
-      <h2>Not a member?</h2>
-      <section>Scoffer is the newest daily deals site.
-        We believe that everyone should have access to the best deals, and unlike most alternatives, we won't charge
-        business to post offers
-      </section>
-      <button ui-sref="signup">Sign up now</button>
+                <p ng-show="errorType === 'server'"><i class="fa fa-frown-o"></i> Whoops! Something appears to have gone
+                    wrong with our server - please try again later.</p>
+            </section>
+        </section>
+        <section id="learnmore">
+            <h3>What is Scoffer?</h3>
+
+            <p>Scoffer is a daily deals company that is completely free to the consumer and business.</p>
+
+            <p>It is simply a means of advertising, it requires no monetary transactions and takes no
+                royalties when a customer redeems an offer. The mission statement is to provide everyone with a
+                means of seeing the best offers in their current location at the current time.</p>
+
+            <p>Scoffer consists of a website for business use, and an Android application for consumer use.</p>
+
+            <p>
+                <small>Note: This is a beta version of scoffer - please be patient while we add new features and
+                    fix any bugs that may have persisted!
+                </small>
+            </p>
+
+            <h3>How does it work?</h3>
+
+            <p>Scoffer is designed to be a little different than the average daily deals company.</p>
+
+            <p>The sole purpose is to show the consumer what offers are near their current location,
+                at the time they are there. The aim is to tap into the consumer's spontaneity, sometimes it can be
+                cumbersome
+                to pre-organise something as simple as redeeming an offer for a cup of coffee with some daily deals
+                sites. With this process often involving online or in-app purchases as well as the need to show a
+                verification email or printout on redemption. To combat this Scoffer has been made as simple to use as
+                possible: </p>
+
+            <p>For a business - simply create an account and start posting... as many offers as you like!</p>
+
+            <p>For a consumer - download the android app and start saving money! No account necessary!</p>
+
+            <h3>Who Can Use Scoffer?</h3>
+
+            <p>Scoffer is limited only to offers from companies within food and drink industry.
+                If any offers are posted regarding another industry, or if they are deemed to be spam,
+                then they will be promptly removed. If a user prompts an inappropriate offer then they will
+                blocked from posting any further offers.</p>
+        </section>
     </div>
-    <div id=home-carousel>
-    <carousel id="carousel" interval="myInterval">
-      <slide ng-repeat="slide in slides" active="slide.active">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
-      </slide>
-    </div>
-  </div>
 </div>

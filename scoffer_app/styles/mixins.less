@@ -1,19 +1,319 @@
+.default-padding() {
+  @media (min-width: @screen-sm-min) {
+    //    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  @media (min-width: @screen-md-min) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @media (min-width: @screen-lg-min) {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
+
 .default-container() {
-  background-color: @red-background;
+  border-top: 10px solid @red-background;
   min-height: 750px !important;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  .default-padding();
+}
 
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.59);
-  box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.59);
+.btn-scoffer() {
+  .button-size(@padding-base-vertical; 30px; @font-size-base; @line-height-base; 0px);
+}
 
-  @media (min-width: @screen-sm-min) {
-    padding-top: 30px;
+.form-control::-webkit-input-placeholder,
+[ng-model=hours],
+[ng-model=minutes],
+#business-category {
+  font-size: small !important;
+  font-weight: normal;
   }
 
-  @media (min-width: @screen-sm-min){
-    margin-left: 10%;
-    margin-right: 10%;
+[ng-model] {
+  font-weight: normal;
+}
+
+.has-error {
+  .form-control::-webkit-input-placeholder, select {
+    color: #a60000 !important;
+  }
+
+  option {
+    color: #000000 !important;
+  }
+}
+
+.form-group label,
+.form-group input {
+  display: inline;
+}
+
+.scoffer-form() {
+  padding-top: 20px;
+  .form-inputs {
+    @media (min-width: @screen-sm-min) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .divider {
+      .make-row();
+      h6 {
+        @media (min-width: @screen-sm-min) {
+          padding-left: 0px !important;
+        }
+
+        padding-bottom: 10px;
+        margin: 30px 0 30px 0;
+        font-size: small;
+        border-bottom: 1px dotted;
+        font-family: Delicious-Caps;
+        .make-xs-column(24);
+      }
+    }
+
+    .divider:first-of-type {
+      margin: 0 0 30px 0;
+    }
+
+    .standard-inputs {
+      .make-row();
+
+      .sc-form-group {
+        .make-xs-column(24);
+      }
+
+      label {
+        line-height: normal;
+        padding-left: 0px !important;
+        top: 5px;
+        font-family: @main-font-caps;
+
+        @media (max-width: @screen-sm-min) {
+          padding-bottom: 10px;
+        }
+
+        .make-xs-column(24);
+        .make-sm-column(10);
+        .make-lg-column(6);
+      }
+
+      select {
+        .make-sm-column(8);
+      }
+
+      input, textarea {
+        line-height: normal;
+        .make-xs-column(24);
+        .make-sm-column(12);
+      }
+
+      .long-label {
+        line-height: normal;
+      }
+
+      .sc-xs-input {
+        .make-sm-column(5);
+      }
+
+      .sc-small-input {
+        .make-sm-column(8);
+      }
+
+      .sc-large-input {
+        .make-sm-column(14);
+      }
+    }
+
+    .timepicker-group {
+
+      .make-row();
+      padding: 0px;
+
+      div {
+        .make-xs-column(12);
+        .make-lg-column(10);
+
+        .timepicker-label {
+          .make-xs-column(24);
+          .make-sm-column(10);
+          .make-lg-column(15);
+          padding-left: 0px;
+          font-weight: bold;
+
+          @media (min-width: @screen-md-min) {
+            line-height: 101px;
+          }
+        }
+      }
+
+      div + div {
+        .make-lg-column(12);
+
+        .timepicker-label {
+          .make-md-column(11);
+          .make-lg-column(9);
+        }
+      }
+    }
+  }
+  .submit-buttons {
+    text-align: center;
+    border-top: 5px solid @red-background;
+    padding: 30px 20px 30px 20px;
+    margin-top: 20px;
+
+    button {
+      .btn();
+      .btn-scoffer();
+      .btn-info();
+    }
+
+    button:last-child {
+      .btn-primary()
+    }
+  }
+}
+
+.scoffer-image-upload() {
+
+  .toggle_info {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e62401;
+    display: block;
+  }
+
+  .note {
+    margin: 20px 0
+  }
+
+  .inline {
+    display: inline-block;
+  }
+
+  #direct_upload {
+    padding: 20px 40px;
+    margin: 20px 20px;
+
+    #message-holder {
+      padding-bottom: 15px;
+
+      #file-icon {
+        float: right;
+        margin-top: -15px;
+        margin-right: -30px;
+      }
+
+      #instruction {
+        color: lightgray;
+        font-size: x-small;
+        float: left;
+        margin-top: -15px;
+        margin-left: -30px;;
+      }
+    }
+
+  }
+
+  #direct_upload_jquery h1, #direct_upload h1 {
+    margin: 0 0 15px 0;
+  }
+
+  .back_link {
+    font-weight: bold;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  #direct_upload, #direct_upload_jquery {
+    border: 1px dashed #ccc;
+  }
+
+  #direct_upload.dragover {
+    border-color: #73a8cc;
+    background-color: rgba(206, 232, 237, 0.67);
+  }
+
+  #direct_upload.dragover-err {
+    border-color: #c00;
+    background-color: rgba(237, 111, 109, 0.67);
+  }
+
+  .upload_button_holder {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .upload_button {
+    .btn();
+    .btn-scoffer();
+    .btn-primary();
+  }
+
+  .upload_button_holder .upload_button {
+    display: block;
+  }
+
+  .upload_button_holder .cloudinary_fileupload {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  #preview {
+    height: 60px;
+    width: auto;
+  }
+}
+
+.scoffer-page-header() {
+  .sc-error {
+    padding-top: 20px;
+  }
+
+  header {
+    padding-bottom: 15px;
+    border-bottom: 5px solid @red-background;
+    font-size: medium;
+    @media (min-width: @screen-sm-min) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    h2 {
+      font-family: @brand-font;
+      padding: 0px;
+      margin: 0px;
+      text-align: center;
+    }
+
+    p:first-of-type {
+      margin-top: 20px;
+    }
+
+    //    P:first-letter {
+    //      font-size: 20px;
+    //      font-weight: bold;
+    //    }
   }
 }

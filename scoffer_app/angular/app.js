@@ -20,25 +20,43 @@ scofferApp.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('notloggedin', {
             url: '/notloggedin',
-            templateUrl: 'partials/notloggedin.html'
+            templateUrl: 'scoffer_app/partials/notloggedin.html'
         })
         .state('loggedinlanding', {
             url: "/loggedinlanding",
-            templateUrl: "partials/loggedinlanding.html",
+            templateUrl: "scoffer_app/partials/loggedinlanding.html",
             controller: 'LoggedinCtrl'
         })
         .state('about', {
             url: "/about",
-            templateUrl: "partials/about.html"
+            templateUrl: "scoffer_app/partials/about.html"
         })
         .state('signup', {
             url: "/signup",
-            templateUrl: "partials/signup.html",
+            templateUrl: "scoffer_app/partials/signup.html",
             controller: "SignupCtrl"
         })
-        .state('upload', {
-            url: "/upload",
-            templateUrl: 'partials/photo-upload.html',
-            controller: 'photoUploadCtrl'
+        .state('redirect', {
+            url: '/redirect',
+            controller: 'redirectCtrl'
         })
+});
+
+scofferApp.run(['$rootScope', '$state', 'loginService', '$log',
+    function ($rootScope, $state, loginService, $log) {
+        //$log.info('Logged In = ' + loggedIn);
+
+        //$rootScope.$on('$stateChangeStart', function (event) {
+        //    if (!loggedIn) {
+        //        $log.error('ERROR - This page requires authentication');
+        //        event.preventDefault();
+        //        $state.go('signup');
+        //    }
+        //});
+    }
+]);
+
+scofferApp.controller('redirectCtrl', function ($state, $log) {
+    $log.error('ERROR - Redirecting...');
+    //$state.go('notloggedin');
 });

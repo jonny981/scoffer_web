@@ -1,19 +1,24 @@
+<div class="error" ng-hide="errorType === 'none'" ng-switch on="errorType">
+    <span class="info fa fa-exclamation-triangle"></span>
+    <h5 ng-switch-when="missingdata">Whoops! Something went wrong - Check that you have completed all of the required
+        data fields</h5>
+    <h5 ng-switch-when="zeroresults">Whoops! Something went wrong - We were unable to determine your location, please
+        check the address
+        you
+        entered</h5>
+    <h5 ng-switch-when="googlemaps">Whoops! Something went wrong - We were unable to contact google maps to determine
+        your location</h5>
+    <h5 ng-switch-when="servererror">Whoops! Something went wrong - The Scoffer server appears to be offline or
+        unreachable, please try
+        again
+        later</h5>
+    <button class="close" ng-click="clearError()"><span class="fa fa-times"></span></button>
+</div>
 <div id="signup-page">
     <div id="signup-form">
-        <div class="error" ng-hide="errorType === 'none'" ng-switch on="errorType">
-            <span class="info glyphicon glyphicon-info-sign"></span>
-            <h5 ng-switch-when="missingdata">Error! You have not completed all of the required data fields</h5>
-            <h5 ng-switch-when="zeroresults">Error! We were unable to determine your location, please check the address
-                you
-                entered</h5>
-            <h5 ng-switch-when="googlemaps">Error! We were unable to contact google maps to determine your location</h5>
-            <h5 ng-switch-when="servererror">Sorry! The Scoffer server appears to be offline or unreachable, please try
-                again
-                later</h5>
-            <button class="close" ng-click="clearError()"><span class="glyphicon glyphicon-remove"></span></button>
-        </div>
         <header>
-            <h2>Sign up to Scoffer now!</h2>
+            <h2 ng-class="{'sc-error' : errorType !== 'none'}"><span class="fa fa-pencil-square-o"></span> Sign up to
+                Scoffer now!</h2>
 
             <p>Signing up is quick and easy, and you can begin posting offers as soon as you have created an account.
                 After
@@ -30,7 +35,7 @@
         <form name="signupForm" ng-submit="submitSignup()" novalidate>
             <div class="form-inputs">
                 <section class="standard-inputs">
-                    <h6>Login Details</h6>
+                    <span class="divider"><h6>Login Details</h6></span>
 
                     <div class="form-group sc-form-group"
                          ng-class="{'has-error' : (signupForm.emailAddress.$invalid && showValidation)}">
@@ -44,20 +49,20 @@
                     <div class="form-group sc-form-group"
                          ng-class="{'has-error' : (signupForm.password.$invalid && showValidation)}">
                         <label for="password-one">Password</label>
-                        <input class="form-control" type="text" name="password"
+                        <input class="form-control sc-xs-input" type="password" name="password"
                                id="password-one"
-                               placeholder="* Password (8-12 characters)" ng-model="signup.password"
+                               placeholder="* Password (8-12 char)" ng-model="signup.password"
                                ng-minlength="8" maxlength="12" required/>
                     </div>
                     <div class="form-group sc-form-group"
                          ng-class="{'has-error' : (signupForm.password.$invalid && showValidation)}">
                         <label for="password-two">Repeat Password</label>
-                        <input class="form-control" type="text" name="passwordTwo"
+                        <input class="form-control sc-xs-input" type="password" name="passwordTwo"
                                id="password-two"
                                placeholder="* Repeat Password" ng-minlength="8" maxlength="12" required/>
                     </div>
 
-                    <h6>Contact Details</h6>
+                    <span class="divider"><h6>Contact Details</h6></span>
 
                     <div class="form-group sc-form-group"
                          ng-class="{'has-error' : (signupForm.companyName.$invalid && showValidation)}">
@@ -70,17 +75,17 @@
                     <div class="form-group sc-form-group"
                          ng-class="{'has-error' : (signupForm.phoneNum.$invalid && showValidation)}">
                         <label for="phone-num">Company Phone Number</label>
-                        <input class="form-control sc-small-input" type="number"
+                        <input class="form-control sc-xs-input" type="number"
                                placeholder="* Company phone number"
                                name="phoneNum" id="phone-num" ng-model="signup.phoneNum" ng-minlength="11"
                                ng-maxlength="11" required>
                     </div>
-                    <h6>Address</h6>
+                    <span class="divider"><h6>Address</h6></span>
 
                     <div class="form-group sc-form-group"
                          ng-class="{'has-error' : (signupForm.buildingNum.$invalid && showValidation)}">
                         <label for="building-num">Building/Unit No.</label>
-                        <input class="form-control sc-small-input" type="text"
+                        <input class="form-control sc-xs-input" type="text"
                                placeholder="* Building/unit number"
                                name="buildingNum" id="building-num" ng-model="signup.buildingNum" ng-minlength="1"
                                required>
@@ -101,8 +106,17 @@
                                name="city" id="city" ng-model="signup.townCity" ng-minlength="3"
                                required>
                     </div>
+                    <div class="form-group sc-form-group"
+                         ng-class="{'has-error' : (signupForm.postcode.$invalid && showValidation)}">
+                        <label for="postcode">Post Code</label>
+                        <input class="form-control sc-xs-input" type="text"
+                               placeholder="* UK Postcode"
+                               name="postcode" id="postcode" ng-model="signup.postcode" ng-minlength="6"
+                               required
+                               ng-pattern="/^([g][i][r][0][a][a])$|^((([a-pr-uwyz]{1}([0]|[1-9]\d?))|([a-pr-uwyz]{1}[a-hk-y]{1}([0]|[1-9]\d?))|([a-pr-uwyz]{1}[1-9][a-hjkps-uw]{1})|([a-pr-uwyz]{1}[a-hk-y]{1}[1-9][a-z]{1}))(\d[abd-hjlnp-uw-z]{2})?)$/i">
+                    </div>
 
-                    <h6>Company Information</h6>
+                    <span class="divider"><h6>Company Information</h6></span>
 
                     <div class="form-group sc-form-group"
                          ng-class="{'has-error' : (signupForm.description.$invalid && showValidation)}">
@@ -128,14 +142,14 @@
                     <div class="sc-timepicker">
                         <span class="timepicker-label">Opening Time</span>
 
-                        <timepicker class="timepick" ng-model="signup.openingTime" ng-change="changed()"
+                        <timepicker class="timepick" ng-model="openingTime" ng-change="changed()"
                                     hour-step="hstep"
                                     minute-step="mstep"
                                     show-meridian="ismeridian"></timepicker>
                     </div>
                     <div class="sc-timepicker">
                         <span class="timepicker-label">Closing Time</span>
-                        <timepicker class="timepick" ng-model="signup.closingTime" ng-change="changed()"
+                        <timepicker class="timepick" ng-model="closingTime" ng-change="changed()"
                                     hour-step="hstep"
                                     minute-step="mstep"
                                     show-meridian="ismeridian"></timepicker>
@@ -153,8 +167,8 @@
                 </section>
             </div>
             <section class="submit-buttons">
-                <button type="submit">Sign Up</button>
                 <button ui-sref="notloggedin">Cancel</button>
+                <button type="submit"><span class="fa fa-pencil-square-o"></span> Sign Up</button>
             </section>
         </form>
     </div>

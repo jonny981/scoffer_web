@@ -1,305 +1,46 @@
 #loggedin-landing {
 
-
-    #posterframe {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-    }
-
-    .actions {
-      margin: 20px 0;
-    }
-
-    .upload_link {
-      color: #000;
-      border: 1px solid #aaa;
-      background-color: #e0e0e0;
-      font-size: 18px;
-      height: 20px;
-      padding: 5px 10px;
-      width: 250px;
-      margin: 10px 0 20px 0;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      margin: 5px;
-    }
-
-    .photo {
-      margin: 10px;
-      padding: 10px;
-      border-top: 2px solid #ccc;
-    }
-
-    .photo .thumbnail {
-      margin-top: 10px;
-      display: block;
-      max-width: 200px;
-      border: none;
-    }
-
-    .toggle_info {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #e62401;
-      display: block;
-    }
-
-    .thumbnail_holder {
-      height: 182px;
-      margin-bottom: 5px;
-      margin-right: 10px;
-    }
-
-    .info td, .uploaded_info td {
-      font-size: 12px
-    }
-
-    .note {
-      margin: 20px 0
-    }
-
-    .inline {
-      display: inline-block;
-    }
-
-    td {
-      vertical-align: top;
-      padding-right: 5px;
-    }
-
-    #direct_upload {
-      padding: 20px 40px;
-      margin: 20px 20px;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-    }
-
-    #direct_upload_jquery h1, #direct_upload h1 {
-      margin: 0 0 15px 0;
-    }
-
-    .back_link {
-      font-weight: bold;
-      display: block;
-      font-size: 16px;
-      margin: 10px 0;
-    }
-
-    form {
-      border: 1px solid #ddd;
-      margin: 15px 0;
-      padding: 15px 0;
-      border-radius: 4px;
-    }
-
-    form .form_line {
-      margin-bottom: 20px;
-    }
-
-    form .form_controls {
-      margin-left: 180px;
-    }
-
-    form label {
-      float: left;
-      width: 160px;
-      padding-top: 3px;
-      text-align: right;
-    }
-
-    form .error {
-      color: #c55;
-      margin: 0 10px;
-    }
-
-    #direct_upload, #direct_upload_jquery {
-      border: 1px dashed #ccc;
-    }
-
-    #direct_upload.dragover {
-      border-color: #73a8cc;
-      background-color: rgba(206, 232, 237, 0.67);
-    }
-
-    #direct_upload.dragover-err {
-      border-color: #c00;
-      background-color: rgba(237, 111, 109, 0.67);
-    }
-
-    .upload_details {
-      font-size: 12px;
-      margin: 20px;
-      border-top: 1px solid #ccc;
-      word-wrap: break-word;
-    }
-
-    .upload_button_holder {
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-    }
-
-    .upload_button {
-      .btn();
-      .btn-primary();
-    }
-
-    .upload_button_holder .upload_button {
-      display: block;
-    }
-
-    .upload_button_holder .cloudinary_fileupload {
-      opacity: 0;
-      filter: alpha(opacity=0);
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-
-  #preview {
-    height: 60px;
-    width: auto;
-  }
-
+  padding-top: 0px !important;
+  .scoffer-image-upload();
   .default-container();
+  .scoffer-page-header();
+
   #postoffer {
-    .well();
+    .scoffer-form();
 
     .glyphicon-question-sign {
+      padding-left: 20px;
       .hidden-xs();
     }
-    margin-right: 10px;
-    margin-left: 10px;
 
-    @media (min-width: @screen-sm-min) {
-      margin-right: 50px;
-      margin-left: 50px;
-    }
-
-    @media (min-width: @screen-md-min) {
-      margin-right: 100px;
-      margin-left: 100px;
-    }
-
-    h2 {
-      .make-xs-column(24);
-      font-family: @brand-font;
-      padding: 0px;
-      margin: 0px;
-      text-align: center;
-    }
-
-    section {
-      margin-bottom: 20px;
+    .dp-inputs {
       .make-row();
 
-      textarea {
-        .form-control();
+      .sc-form-group {
         .make-xs-column(24);
-        display: inline;
       }
 
-      span:first-child {
+      .sc-datepicker-label {
+        line-height: normal;
+        padding-left: 0px !important;
+        top: 5px;
+        font-family: @main-font-caps;
+
+        @media (max-width: @screen-sm-min) {
+          padding-bottom: 10px;
+        }
+
         .make-xs-column(24);
-        .make-sm-column(7);
-        .make-lg-column(4);
-        .make-md-column-offset(1);
-        font-size: large;
+        .make-sm-column(10);
+        .make-lg-column(6);
       }
 
-      i {
-        padding-left: 10px;
-      }
-    }
-
-    section + p {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      border-top: 1px dotted;
-      border-bottom: 1px dotted;
-    }
-
-    section:nth-child(3) {
-      margin-top: 20px;
-      textarea {
+      .sc-datepicker-input {
         .make-xs-column(24);
-        .make-sm-column(8);
+        .make-sm-column(12);
         .make-md-column(8);
-        resize: none;
+        padding-left: 0px;
       }
-    }
-
-    section:nth-child(4) {
-      textarea {
-        .make-sm-column(16);
-        height: 100px;
-        resize: vertical;
-      }
-    }
-
-    section:nth-child(5) {
-      .make-xs-column(24);
-
-
-    }
-
-    section:last-child {
-      text-align: center;
-      margin-top: 15px;
-
-      button {
-        .btn();
-      }
-
-      button:first-of-type {
-        .btn-info();
-
-        & + button {
-          .btn-primary();
-        }
-      }
-
-      div {
-        .make-xs-column(24);
-      }
-
-      p:first-child {
-        padding-top: 30px;
-        border-top: 1px dotted;
-      }
-
-      p + p {
-        margin-left: 20px;
-        margin-right: 20px;
-
-        @media (min-width: @screen-md-min) {
-          margin-left: 150px;
-          margin-right: 150px;
-        }
-      }
-    }
-
-    .sc-datepicker-label {
-      .make-xs-column(24);
-      .make-sm-column(7);
-      .make-lg-column(4);
-      .make-md-column-offset(1);
-      font-size: large;
-    }
-
-    .sc-datepicker-input {
-      .make-xs-column(24);
-      .make-sm-column(12);
-      .make-md-column(8);
-      padding-left: 0px;
     }
   }
 }
