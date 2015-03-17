@@ -18,16 +18,12 @@ $postdata = file_get_contents("php://input");
 
 $request = json_decode($postdata);;
 
-@$radius = $request->radius;
-@$userLat = $request->latitude;
-@$userLong = $request->longitude;
+@companyID = $request->companyID;
 
-$sql = "SELECT *, ROUND(( 3959 * acos( cos( radians('$userLat') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('$userLong') ) + sin( radians('$userLat') ) * sin( radians( latitude ) ) ) ) , 1)
-        AS distance
-        FROM company INNER JOIN offer ON company.CompanyID = offer.CompanyID
-        HAVING distance < '$radius'
-        ORDER BY distance
-        LIMIT 0 , 20;";
+$sql = "SELECT *,
+        FROM offers
+        WHERE CompanyID = 1
+        LIMIT 0 , 100;";
 
 $result = $con->query($sql);
 

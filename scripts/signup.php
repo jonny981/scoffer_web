@@ -27,9 +27,13 @@ $request = json_decode($postdata);
 @$description = $request->description;
 @$openingTime = $request->openingTime;
 @$closingTime = $request->closingTime;
+@$email = $request->companyEmail;
+@$websiteURL = $request->websiteURL;
+@$type = $request->type;
+@$phoneNum = $request->phoneNum;
 
-$query = "INSERT INTO Company (CompanyName, Password, Latitude, Longitude, Description, OpeningTime, ClosingTime)
-          VALUES ('$companyName', '$password', '$latitude', '$longitude', '$description', '$openingTime', '$closingTime')";
+$query = "INSERT INTO Company (CompanyName, Password, Latitude, Longitude, Description, OpeningTime, ClosingTime, Email, WebsiteURL, Type, PhoneNum)
+          VALUES ('$companyName', '$password', '$latitude', '$longitude', '$description', '$openingTime', '$closingTime', '$email', '$websiteURL', '$type', '$phoneNum')";
 
 if (mysqli_query($con, $query)) {
   echo "success";
