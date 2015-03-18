@@ -7133,17 +7133,14 @@ footer #footer-container:after {
   font-family: Blenda;
   src: url('fonts/Blenda-script.otf');
 }
-
 @font-face {
   font-family: Delicious;
   src: url('fonts/Delicious-Roman.otf');
 }
-
 @font-face {
   font-family: Delicious-Caps;
   src: url('fonts/Delicious-SmallCaps.otf');
 }
-
 .form-control::-webkit-input-placeholder,
 [ng-model=hours],
 [ng-model=minutes],
@@ -7151,25 +7148,20 @@ footer #footer-container:after {
   font-size: small !important;
   font-weight: normal;
 }
-
 [ng-model] {
   font-weight: normal;
 }
-
 .has-error .form-control::-webkit-input-placeholder,
 .has-error select {
   color: #a60000 !important;
 }
-
 .has-error option {
   color: #000000 !important;
 }
-
 .form-group label,
 .form-group input {
   display: inline;
 }
-
 #loggedin-landing {
   padding-top: 0px !important;
   border-top: 10px solid #c93055;
@@ -7195,17 +7187,14 @@ footer #footer-container:after {
   padding: 20px 40px;
   margin: 20px 20px;
 }
-
 #loggedin-landing #direct_upload #message-holder {
   padding-bottom: 15px;
 }
-
 #loggedin-landing #direct_upload #message-holder #file-icon {
   float: right;
   margin-top: -15px;
   margin-right: -30px;
 }
-
 #loggedin-landing #direct_upload #message-holder #instruction {
   color: lightgray;
   font-size: x-small;
@@ -7363,26 +7352,25 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
     padding-left: 5%;
     padding-right: 5%;
   }
+  #loggedin-landing h2 {
+    padding-top: 30px !important;
+  }
 }
-
 @media (min-width: 992px) {
   #loggedin-landing {
     padding-left: 10%;
     padding-right: 10%;
   }
 }
-
 @media (min-width: 1200px) {
   #loggedin-landing {
     padding-left: 17%;
     padding-right: 17%;
   }
 }
-
 #loggedin-landing .sc-error {
   padding-top: 20px;
 }
-
 #loggedin-landing header {
   padding-bottom: 15px;
   border-bottom: 5px solid #c93055;
@@ -7394,34 +7382,28 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
     padding-right: 20px;
   }
 }
-
 #loggedin-landing header h2 {
   font-family: Blenda;
   padding: 0px;
   margin: 0px;
   text-align: center;
 }
-
 #loggedin-landing header p:first-of-type {
   margin-top: 20px;
 }
-
 #loggedin-landing #postoffer {
   padding-top: 20px;
 }
-
 @media (min-width: 768px) {
   #loggedin-landing #postoffer .form-inputs {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .divider {
   margin-left: -15px;
   margin-right: -15px;
 }
-
 #loggedin-landing #postoffer .form-inputs .divider h6 {
   padding-bottom: 10px;
   margin: 30px 0 30px 0;
@@ -7435,22 +7417,18 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 768px) {
   #loggedin-landing #postoffer .form-inputs .divider h6 {
     padding-left: 0px !important;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .divider:first-of-type {
   margin: 0 0 30px 0;
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs {
   margin-left: -15px;
   margin-right: -15px;
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-form-group {
   position: relative;
   float: left;
@@ -7459,7 +7437,6 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs label {
   line-height: normal;
   padding-left: 0px !important;
@@ -7472,41 +7449,35 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (max-width: 768px) {
   #loggedin-landing #postoffer .form-inputs .standard-inputs label {
     padding-bottom: 10px;
   }
 }
-
 @media (min-width: 768px) {
   #loggedin-landing #postoffer .form-inputs .standard-inputs label {
     float: left;
     width: 41.66666667%;
   }
 }
-
 @media (min-width: 1200px) {
   #loggedin-landing #postoffer .form-inputs .standard-inputs label {
     float: left;
     width: 25%;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs select {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 768px) {
   #loggedin-landing #postoffer .form-inputs .standard-inputs select {
     float: left;
     width: 33.33333333%;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs input,
 #loggedin-landing #postoffer .form-inputs .standard-inputs textarea {
   line-height: normal;
@@ -7524,59 +7495,50 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
     width: 50%;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs .long-label {
   line-height: normal;
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-xs-input {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 768px) {
   #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-xs-input {
     float: left;
     width: 20.83333333%;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-small-input {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 768px) {
   #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-small-input {
     float: left;
     width: 33.33333333%;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-large-input {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 768px) {
   #loggedin-landing #postoffer .form-inputs .standard-inputs .sc-large-input {
     float: left;
     width: 58.33333333%;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .timepicker-group {
   margin-left: -15px;
   margin-right: -15px;
   padding: 0px;
 }
-
 #loggedin-landing #postoffer .form-inputs .timepicker-group div {
   float: left;
   width: 50%;
@@ -7585,14 +7547,12 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 1200px) {
   #loggedin-landing #postoffer .form-inputs .timepicker-group div {
     float: left;
     width: 41.66666667%;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .timepicker-group div .timepicker-label {
   float: left;
   width: 100%;
@@ -7609,62 +7569,53 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
     width: 41.66666667%;
   }
 }
-
 @media (min-width: 1200px) {
   #loggedin-landing #postoffer .form-inputs .timepicker-group div .timepicker-label {
     float: left;
     width: 62.5%;
   }
 }
-
 @media (min-width: 992px) {
   #loggedin-landing #postoffer .form-inputs .timepicker-group div .timepicker-label {
     line-height: 101px;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .timepicker-group div + div {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 1200px) {
   #loggedin-landing #postoffer .form-inputs .timepicker-group div + div {
     float: left;
     width: 50%;
   }
 }
-
 #loggedin-landing #postoffer .form-inputs .timepicker-group div + div .timepicker-label {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 992px) {
   #loggedin-landing #postoffer .form-inputs .timepicker-group div + div .timepicker-label {
     float: left;
     width: 45.83333333%;
   }
 }
-
 @media (min-width: 1200px) {
   #loggedin-landing #postoffer .form-inputs .timepicker-group div + div .timepicker-label {
     float: left;
     width: 37.5%;
   }
 }
-
 #loggedin-landing #postoffer .submit-buttons {
   text-align: center;
   border-top: 5px solid #c93055;
   padding: 30px 20px 30px 20px;
   margin-top: 20px;
 }
-
 #loggedin-landing #postoffer .submit-buttons button {
   display: inline-block;
   margin-bottom: 0;
@@ -7690,7 +7641,6 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
   background-color: #5bc0de;
   border-color: #46b8da;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:focus,
 #loggedin-landing #postoffer .submit-buttons button:active:focus,
 #loggedin-landing #postoffer .submit-buttons button.active:focus,
@@ -7701,14 +7651,12 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:hover,
 #loggedin-landing #postoffer .submit-buttons button:focus,
 #loggedin-landing #postoffer .submit-buttons button.focus {
   color: #333333;
   text-decoration: none;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:active,
 #loggedin-landing #postoffer .submit-buttons button.active {
   outline: 0;
@@ -7716,7 +7664,6 @@ fieldset[disabled] #loggedin-landing .upload_button.active {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-
 #loggedin-landing #postoffer .submit-buttons button.disabled,
 #loggedin-landing #postoffer .submit-buttons button[disabled],
 fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button {
@@ -7727,7 +7674,6 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:hover,
 #loggedin-landing #postoffer .submit-buttons button:focus,
 #loggedin-landing #postoffer .submit-buttons button.focus,
@@ -7738,13 +7684,11 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button {
   background-color: #31b0d5;
   border-color: #269abc;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:active,
 #loggedin-landing #postoffer .submit-buttons button.active,
 .open > .dropdown-toggle#loggedin-landing #postoffer .submit-buttons button {
   background-image: none;
 }
-
 #loggedin-landing #postoffer .submit-buttons button.disabled,
 #loggedin-landing #postoffer .submit-buttons button[disabled],
 fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button,
@@ -7766,18 +7710,15 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button.active {
   background-color: #5bc0de;
   border-color: #46b8da;
 }
-
 #loggedin-landing #postoffer .submit-buttons button .badge {
   color: #5bc0de;
   background-color: #ffffff;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:last-child {
   color: #ffffff;
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:last-child:hover,
 #loggedin-landing #postoffer .submit-buttons button:last-child:focus,
 #loggedin-landing #postoffer .submit-buttons button:last-child.focus,
@@ -7788,13 +7729,11 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button.active {
   background-color: #286090;
   border-color: #204d74;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:last-child:active,
 #loggedin-landing #postoffer .submit-buttons button:last-child.active,
 .open > .dropdown-toggle#loggedin-landing #postoffer .submit-buttons button:last-child {
   background-image: none;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:last-child.disabled,
 #loggedin-landing #postoffer .submit-buttons button:last-child[disabled],
 fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-child,
@@ -7816,27 +7755,22 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-
 #loggedin-landing #postoffer .submit-buttons button:last-child .badge {
   color: #337ab7;
   background-color: #ffffff;
 }
-
 #loggedin-landing #postoffer .glyphicon-question-sign {
   padding-left: 20px;
 }
-
 @media (max-width: 767px) {
   #loggedin-landing #postoffer .glyphicon-question-sign {
     display: none !important;
   }
 }
-
 #loggedin-landing #postoffer .dp-inputs {
   margin-left: -15px;
   margin-right: -15px;
 }
-
 #loggedin-landing #postoffer .dp-inputs .sc-form-group {
   position: relative;
   float: left;
@@ -7845,7 +7779,6 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
   padding-left: 15px;
   padding-right: 15px;
 }
-
 #loggedin-landing #postoffer .dp-inputs .sc-datepicker-label {
   line-height: normal;
   padding-left: 0px !important;
@@ -7858,7 +7791,6 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (max-width: 768px) {
   #loggedin-landing #postoffer .dp-inputs .sc-datepicker-label {
     padding-bottom: 10px;
@@ -7876,7 +7808,6 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
     width: 25%;
   }
 }
-
 #loggedin-landing #postoffer .dp-inputs .sc-datepicker-input {
   float: left;
   width: 100%;
@@ -7911,22 +7842,22 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
     padding-left: 5%;
     padding-right: 5%;
   }
+  #signup-page h2 {
+    padding-top: 30px !important;
+  }
 }
-
 @media (min-width: 992px) {
   #signup-page {
     padding-left: 10%;
     padding-right: 10%;
   }
 }
-
 @media (min-width: 1200px) {
   #signup-page {
     padding-left: 17%;
     padding-right: 17%;
   }
 }
-
 #signup-page #signup-form .sc-error {
   padding-top: 20px;
 }
@@ -7959,12 +7890,10 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
     padding-right: 20px;
   }
 }
-
 #signup-page #signup-form form .form-inputs .divider {
   margin-left: -15px;
   margin-right: -15px;
 }
-
 #signup-page #signup-form form .form-inputs .divider h6 {
   padding-bottom: 10px;
   margin: 30px 0 30px 0;
@@ -7978,13 +7907,11 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 768px) {
   #signup-page #signup-form form .form-inputs .divider h6 {
     padding-left: 0px !important;
   }
 }
-
 #signup-page #signup-form form .form-inputs .divider:first-of-type {
   margin: 0 0 30px 0;
 }
@@ -8012,7 +7939,6 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (max-width: 768px) {
   #signup-page #signup-form form .form-inputs .standard-inputs label {
     padding-bottom: 10px;
@@ -8062,14 +7988,12 @@ fieldset[disabled] #loggedin-landing #postoffer .submit-buttons button:last-chil
 #signup-page #signup-form form .form-inputs .standard-inputs .long-label {
   line-height: normal;
 }
-
 #signup-page #signup-form form .form-inputs .standard-inputs .sc-xs-input {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 @media (min-width: 768px) {
   #signup-page #signup-form form .form-inputs .standard-inputs .sc-xs-input {
     float: left;
@@ -8240,7 +8164,6 @@ fieldset[disabled] #signup-page #signup-form form .submit-buttons button {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
 #signup-page #signup-form form .submit-buttons button:hover,
 #signup-page #signup-form form .submit-buttons button:focus,
 #signup-page #signup-form form .submit-buttons button.focus,
@@ -8251,13 +8174,11 @@ fieldset[disabled] #signup-page #signup-form form .submit-buttons button {
   background-color: #31b0d5;
   border-color: #269abc;
 }
-
 #signup-page #signup-form form .submit-buttons button:active,
 #signup-page #signup-form form .submit-buttons button.active,
 .open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button {
   background-image: none;
 }
-
 #signup-page #signup-form form .submit-buttons button.disabled,
 #signup-page #signup-form form .submit-buttons button[disabled],
 fieldset[disabled] #signup-page #signup-form form .submit-buttons button,
@@ -8279,18 +8200,15 @@ fieldset[disabled] #signup-page #signup-form form .submit-buttons button.active 
   background-color: #5bc0de;
   border-color: #46b8da;
 }
-
 #signup-page #signup-form form .submit-buttons button .badge {
   color: #5bc0de;
   background-color: #ffffff;
 }
-
 #signup-page #signup-form form .submit-buttons button:last-child {
   color: #ffffff;
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-
 #signup-page #signup-form form .submit-buttons button:last-child:hover,
 #signup-page #signup-form form .submit-buttons button:last-child:focus,
 #signup-page #signup-form form .submit-buttons button:last-child.focus,
@@ -8301,13 +8219,11 @@ fieldset[disabled] #signup-page #signup-form form .submit-buttons button.active 
   background-color: #286090;
   border-color: #204d74;
 }
-
 #signup-page #signup-form form .submit-buttons button:last-child:active,
 #signup-page #signup-form form .submit-buttons button:last-child.active,
 .open > .dropdown-toggle#signup-page #signup-form form .submit-buttons button:last-child {
   background-image: none;
 }
-
 #signup-page #signup-form form .submit-buttons button:last-child.disabled,
 #signup-page #signup-form form .submit-buttons button:last-child[disabled],
 fieldset[disabled] #signup-page #signup-form form .submit-buttons button:last-child,
@@ -8329,102 +8245,15 @@ fieldset[disabled] #signup-page #signup-form form .submit-buttons button:last-ch
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-
 #signup-page #signup-form form .submit-buttons button:last-child .badge {
   color: #337ab7;
   background-color: #ffffff;
 }
-body {
-  font-family: Delicious;
-  font-weight: normal;
-  background-color: #ffffff;
-}
-
-.form-control {
-  border-radius: 0px;
-}
-.navbar {
-  border-radius: 0px !important;
-  margin-bottom: 0px;
-}
-.navbar-brand {
-  font-family: Blenda;
-  font-size: xx-large;
-  padding-left: 25px;
-}
-
-@media (max-width: 768px) {
-  .navbar-nav a:hover {
-    background-color: rgba(157, 157, 157, 0.35) !important;
-  }
-}
-
-.navbar-nav li > a {
-  cursor: pointer;
-}
-
-@media (max-width: 992px) {
-  .navbar-nav li > a {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-  }
-}
-
-.navbar-right li > a {
-  padding-top: 0px;
-  line-height: 30px !important;
-}
-@media (min-width: 768px) {
-  .navbar-right li > a {
-    padding-top: 10px !important;
-  }
-}
-
-@media (max-width: 992px) {
-  .navbar-right li > a {
-    text-align: center;
-    border-bottom: none;
-  }
-}
-.navbar-right img {
-  height: 30px;
-  width: auto;
-  margin-left: 10px;
-}
-.navbar-right span {
-  font-family: Blenda;
-}
-
-.container-fluid {
-  padding-top: 0px !important;
-}
-@media (min-width: 768px) {
-  .container-fluid {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}
-
-@media (min-width: 992px) {
-  .container-fluid {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container-fluid {
-    padding-left: 17%;
-    padding-right: 17%;
-  }
-}
-
 #signin #signin-top {
   width: 100%;
   text-shadow: 2px 2px 2px rgba(101, 27, 48, 0.8);
   background-color: #c93055;
 }
-
 #signin #signin-top #welcome p {
   padding-top: 25px;
   margin-bottom: -10px;
@@ -8434,7 +8263,6 @@ body {
   font-family: Delicious-Caps;
   font-size: 20px;
 }
-
 #signin #signin-top h1 {
   font-family: Blenda;
   color: #ffffff;
@@ -8448,20 +8276,17 @@ body {
     font-size: 120px;
   }
 }
-
 @media (min-width: 992px) {
   #signin #signin-top h1 {
     font-size: 140px;
   }
 }
-
 #signin #signin-top h1 span {
   padding-left: 15px;
   font-size: 20px;
   font-family: Delicious;
   text-shadow: none;
 }
-
 #signin #signin-top h1 + p {
   padding: 5% 15px 5% 15px;
   font-family: Delicious-Caps;
@@ -8475,13 +8300,11 @@ body {
     font-size: 30px;
   }
 }
-
 @media (min-width: 992px) {
   #signin #signin-top h1 + p {
     font-size: 35px;
   }
 }
-
 #signin #signin-bottom {
   padding-top: 30px;
   padding-left: 15px;
@@ -8491,6 +8314,9 @@ body {
   #signin #signin-bottom {
     padding-left: 5%;
     padding-right: 5%;
+  }
+  #signin #signin-bottom h2 {
+    padding-top: 30px !important;
   }
 }
 @media (min-width: 992px) {
@@ -8505,11 +8331,9 @@ body {
     padding-right: 17%;
   }
 }
-
 #signin #signin-bottom #navlinks {
   text-align: center;
 }
-
 #signin #signin-bottom #navlinks span {
   width: 25px;
   cursor: pointer;
@@ -8517,13 +8341,11 @@ body {
   padding-right: 8px;
   font-size: 15px;
 }
-
 @media (max-width: 768px) {
   #signin #signin-bottom #navlinks span i {
     font-size: 15px;
   }
 }
-
 @media (min-width: 768px) {
   #signin #signin-bottom #navlinks span {
     font-size: 20px;
@@ -8531,24 +8353,19 @@ body {
     padding-right: 20px;
   }
 }
-
 #signin #signin-bottom #navlinks span:hover {
   color: lightgray;
 }
-
 #signin #signin-bottom #navlinks span:nth-child(2) {
   border-left: 1px dotted;
   border-right: 1px dotted;
 }
-
 #signin #signin-bottom #navlinks span:nth-child(3) {
   border-right: 1px dotted;
 }
-
 #signin #signin-bottom form {
   padding-top: 30px;
 }
-
 #signin #signin-bottom form section {
   width: 100%;
 }
@@ -8559,35 +8376,29 @@ body {
     margin-right: auto;
   }
 }
-
 #signin #signin-bottom form label {
   font-family: Delicious-Caps;
   padding-right: 10px;
 }
-
 #signin #signin-bottom form div {
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
 }
-
 @media (max-width: 768px) {
   #signin #signin-bottom form div {
     width: 100%;
   }
 }
-
 @media (min-width: 768px) {
   #signin #signin-bottom form div:nth-child(2) {
     padding-left: 20px;
   }
 }
-
 #signin #signin-bottom form div:nth-child(3) {
   padding-left: 20px;
   text-align: center;
 }
-
 #signin #signin-bottom form div:nth-child(3) button {
   margin-left: auto;
   margin-right: auto;
@@ -8616,7 +8427,6 @@ body {
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-
 #signin #signin-bottom form div:nth-child(3) button:focus,
 #signin #signin-bottom form div:nth-child(3) button:active:focus,
 #signin #signin-bottom form div:nth-child(3) button.active:focus,
@@ -8627,14 +8437,12 @@ body {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-
 #signin #signin-bottom form div:nth-child(3) button:hover,
 #signin #signin-bottom form div:nth-child(3) button:focus,
 #signin #signin-bottom form div:nth-child(3) button.focus {
   color: #333333;
   text-decoration: none;
 }
-
 #signin #signin-bottom form div:nth-child(3) button:active,
 #signin #signin-bottom form div:nth-child(3) button.active {
   outline: 0;
@@ -8642,7 +8450,6 @@ body {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-
 #signin #signin-bottom form div:nth-child(3) button.disabled,
 #signin #signin-bottom form div:nth-child(3) button[disabled],
 fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button {
@@ -8653,7 +8460,6 @@ fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
 #signin #signin-bottom form div:nth-child(3) button:hover,
 #signin #signin-bottom form div:nth-child(3) button:focus,
 #signin #signin-bottom form div:nth-child(3) button.focus,
@@ -8664,13 +8470,11 @@ fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button {
   background-color: #286090;
   border-color: #204d74;
 }
-
 #signin #signin-bottom form div:nth-child(3) button:active,
 #signin #signin-bottom form div:nth-child(3) button.active,
 .open > .dropdown-toggle#signin #signin-bottom form div:nth-child(3) button {
   background-image: none;
 }
-
 #signin #signin-bottom form div:nth-child(3) button.disabled,
 #signin #signin-bottom form div:nth-child(3) button[disabled],
 fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button,
@@ -8692,12 +8496,10 @@ fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button.active {
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-
 #signin #signin-bottom form div:nth-child(3) button .badge {
   color: #337ab7;
   background-color: #ffffff;
 }
-
 #signin #signin-bottom form input {
   width: 100%;
 }
@@ -8706,24 +8508,101 @@ fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button.active {
     width: 170px;
   }
 }
-
 #signin #signin-bottom #error-messages {
   text-align: center;
   color: #c93055;
 }
-
 #signin #signin-bottom #learnmore {
   padding-top: 20px;
   padding-bottom: 50px;
 }
-
 #signin #signin-bottom #learnmore h3 {
   padding-top: 25px;
   padding-bottom: 20px;
   text-align: center;
   font-family: Delicious-Caps;
 }
-
+body {
+  font-family: Delicious;
+  font-weight: normal;
+  background-color: #ffffff;
+}
+#route-change-container {
+  padding-top: 100% !important;
+}
+.form-control {
+  border-radius: 0px;
+}
+.navbar {
+  border-radius: 0px !important;
+  margin-bottom: 0px;
+}
+.navbar-brand {
+  font-family: Blenda;
+  font-size: xx-large;
+  padding-left: 25px;
+}
+@media (max-width: 768px) {
+  .navbar-nav a:hover {
+    background-color: rgba(157, 157, 157, 0.35) !important;
+  }
+}
+.navbar-nav li > a {
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .navbar-nav li > a {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
+.navbar-right li > a {
+  padding-top: 0px;
+  line-height: 30px !important;
+}
+@media (min-width: 768px) {
+  .navbar-right li > a {
+    padding-top: 10px !important;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-right li > a {
+    text-align: center;
+    border-bottom: none;
+  }
+}
+.navbar-right img {
+  height: 30px;
+  width: auto;
+  margin-left: 10px;
+}
+.navbar-right span {
+  font-family: Blenda;
+}
+.container-fluid {
+  padding-top: 0px !important;
+}
+@media (min-width: 768px) {
+  .container-fluid {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .container-fluid h2 {
+    padding-top: 30px !important;
+  }
+}
+@media (min-width: 992px) {
+  .container-fluid {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+@media (min-width: 1200px) {
+  .container-fluid {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
 .error {
   position: absolute;
   width: 100%;
@@ -8741,28 +8620,27 @@ fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button.active {
     padding-left: 5%;
     padding-right: 5%;
   }
+  .error h2 {
+    padding-top: 30px !important;
+  }
 }
-
 @media (min-width: 992px) {
   .error {
     padding-left: 10%;
     padding-right: 10%;
   }
 }
-
 @media (min-width: 1200px) {
   .error {
     padding-left: 17%;
     padding-right: 17%;
   }
 }
-
 .error .info {
   color: #c93055;
   font-size: large;
   line-height: 30px;
 }
-
 .error h5 {
   display: inline !important;
   font-size: medium;
@@ -8776,23 +8654,19 @@ fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button.active {
   right: auto;
   padding-left: 15px;
 }
-
 .error button {
   display: inline !important;
   font-size: 20px;
   text-align: right;
 }
-
 .error button span {
   color: #c93055;
   line-height: 30px;
 }
-
 .error.ng-hide {
   height: 0px;
   opacity: 0;
 }
-
 footer {
   padding-top: 15px;
   margin-top: 25px;
@@ -8807,6 +8681,9 @@ footer {
     padding-left: 5%;
     padding-right: 5%;
   }
+  footer h2 {
+    padding-top: 30px !important;
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -8820,12 +8697,10 @@ footer {
     padding-right: 17%;
   }
 }
-
 footer #footer-container {
   margin-left: -15px;
   margin-right: -15px;
 }
-
 footer #footer-container span {
   float: left;
   width: 100%;
@@ -8860,12 +8735,10 @@ footer #footer-container span {
     text-align: right;
   }
 }
-
 footer #footer-container span:nth-child(3) i {
   cursor: pointer;
   padding-left: 3px;
 }
-
 footer #footer-container span:nth-child(3) i:hover {
   color: #ffffff;
 }

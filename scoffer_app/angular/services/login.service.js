@@ -7,11 +7,11 @@ scofferApp.factory('loginService', ['$state', '$http', '$log', '$window', '$time
 
                 var deferred = $q.defer();
                 $timeout(function () {
-                    deferred.resolve(); // this aborts the request!
+                    deferred.resolve();
                 }, 20000);
 
                 return $http.post('http://localhost:8080/scripts/sign_in.php', JSON.stringify(loginDetails), {timeout: deferred.promise})
-                    .success(function (data, status) {
+                    .success(function (data) {
                         if (data.validDetails === true) {
                             $window.sessionStorage.loggedInUser = JSON.stringify(data.details);
                             $window.sessionStorage.loginState = true;

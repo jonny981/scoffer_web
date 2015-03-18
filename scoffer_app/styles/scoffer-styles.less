@@ -1,13 +1,18 @@
 @import '../../bower_components/bootstrap/less/bootstrap.less';
-@import "variables.less";
-@import "mixins.less";
-@import "loggedinlanding.less";
-@import "signup.less";
+@import "variables";
+@import "partials-styles/mixins";
+@import "partials-styles/postoffer";
+@import "partials-styles/signup";
+@import "partials-styles/login";
 
 body {
   font-family: @main-font;
   font-weight: @main-font-weight;
   background-color: #ffffff;
+}
+
+#route-change-container {
+  padding-top: 100% !important;
 }
 
 .form-control {
@@ -74,196 +79,6 @@ body {
 .container-fluid {
   padding-top: 0px !important;
   .default-padding();
-}
-
-#signin {
-  #signin-top {
-    width: 100%;
-    text-shadow: 2px 2px 2px rgba(101, 27, 48, 0.80);
-    background-color: @red-background;
-
-    #welcome {
-      p {
-        padding-top: 25px;
-        margin-bottom: -10px;
-        margin-left: -25px;
-        text-align: center;
-        color: white;
-        font-family: @main-font-caps;
-        font-size: 20px;
-      }
-    }
-
-    h1 {
-      font-family: @brand-font;
-      color: @logo-color;
-      font-size: 90px;
-      text-align: center;
-      padding-top: 25px;
-      margin: 0;
-
-      @media (min-width: @screen-sm-min) {
-        font-size: 120px;
-      }
-
-      @media (min-width: @screen-md-min) {
-        font-size: 140px;
-      }
-
-      span {
-        padding-left: 15px;
-        font-size: 20px;
-        font-family: @main-font;
-        text-shadow: none;
-      }
-    }
-
-    h1 + p {
-      padding: 5% 15px 5% 15px;
-      font-family: @main-font-caps;
-      color: #ffffff;
-      text-align: center;
-      font-size: 25px;
-
-      @media (min-width: @screen-sm-min) {
-        padding: 5% 0 2% 0;
-        font-size: 30px;;
-      }
-
-      @media (min-width: @screen-md-min) {
-        font-size: 35px;
-      }
-    }
-  }
-
-  #signin-bottom {
-    padding-top: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    .default-padding();
-
-    #navlinks {
-      text-align: center;
-
-      //      @media (max-width: @screen-sm-min) {
-      //        .make-row();
-      //      }
-
-      span {
-        width: 25px;
-        cursor: pointer;
-        padding-left: 8px;
-        padding-right: 8px;
-        font-size: 15px;
-
-        @media (max-width: @screen-sm-min) {
-          i {
-            font-size: 15px;
-          }
-        }
-
-        //        @media (max-width: @screen-sm-min) {
-        //          .make-xs-column(24);
-        //
-        //          i {
-        //            .make-xs-column(1);
-        //          }
-        //        }
-
-        @media (min-width: @screen-sm-min) {
-          font-size: 20px;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-
-        &:hover {
-          color: lightgray;
-        }
-      }
-
-      span:nth-child(2) {
-        border-left: 1px dotted;
-        border-right: 1px dotted;
-      }
-
-      span:nth-child(3) {
-        border-right: 1px dotted;
-      }
-
-    }
-
-    form {
-      padding-top: 30px;
-      section {
-        width: 100%;
-
-        @media (min-width: @screen-sm-min) {
-          width: 670px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-
-      label {
-        font-family: @main-font-caps;
-        padding-right: 10px;
-      }
-
-      div {
-        @media (max-width: @screen-sm-min) {
-          width: 100%;
-        }
-
-        margin-left: auto;
-        margin-right: auto;
-        display: inline-block;
-      }
-
-      div:nth-child(2) {
-        @media (min-width: @screen-sm-min) {
-          padding-left: 20px;
-        }
-      }
-
-      div:nth-child(3) {
-        padding-left: 20px;
-        text-align: center;
-        button {
-          margin-left: auto;
-          margin-right: auto;
-          font-size: small;
-          .btn();
-          .btn-scoffer();
-          .btn-primary();
-        }
-      }
-
-      input {
-        width: 100%;
-
-        @media (min-width: @screen-sm-min) {
-          width: 170px;
-        }
-      }
-    }
-
-    #error-messages {
-      text-align: center;
-      color: @red-background;
-    }
-
-    #learnmore {
-      padding-top: 20px;
-      padding-bottom: 50px;
-      h3 {
-        padding-top: 25px;
-        padding-bottom: 20px;
-        text-align: center;
-        font-family: @main-font-caps;
-      }
-    }
-  }
 }
 
 .error {

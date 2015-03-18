@@ -20,11 +20,11 @@ scofferApp.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('notloggedin', {
             url: '/notloggedin',
-            templateUrl: 'scoffer_app/partials/notloggedin.html'
+            templateUrl: 'scoffer_app/partials/home.html'
         })
         .state('loggedinlanding', {
             url: "/loggedinlanding",
-            templateUrl: "scoffer_app/partials/loggedinlanding.html",
+            templateUrl: "scoffer_app/partials/postoffer.html",
             controller: 'LoggedinCtrl'
         })
         .state('about', {
@@ -44,15 +44,9 @@ scofferApp.config(function ($stateProvider, $urlRouterProvider) {
 
 scofferApp.run(['$rootScope', '$state', 'loginService', '$log',
     function ($rootScope, $state, loginService, $log) {
-        //$log.info('Logged In = ' + loggedIn);
-
-        //$rootScope.$on('$stateChangeStart', function (event) {
-        //    if (!loggedIn) {
-        //        $log.error('ERROR - This page requires authentication');
-        //        event.preventDefault();
-        //        $state.go('signup');
-        //    }
-        //});
+        $rootScope.$on('$stateChangeStart', function (event) {
+            window.scrollTo(0, 0);
+        });
     }
 ]);
 
