@@ -10,7 +10,7 @@
 <body ng-cloak="">
 
 <!--main navbar which is always present-->
-<nav id="navbar-example" class="navbar navbar-inverse navbar-static" role="navigation">
+<nav id="navbar" class="navbar navbar-inverse navbar-static" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
@@ -37,7 +37,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div ui-view>
+<div ui-view autoscroll="false">
+  <div id="route-change-container"></div>
 </div>
 <footer id="footer">
   <div id="footer-container">
@@ -74,15 +75,16 @@
 <script type="text/javascript" src="bower_components/ng-file-upload/angular-file-upload.min.js"></script>
 
 <!--main app and ui routes-->
-<script type="text/javascript" src="scoffer_app/angular/app.js"></script>
+<script type="text/javascript" src="scoffer_app/angular/main/app.js"></script>
 
 <!--controllers-->
-<script type="text/javascript" src="scoffer_app/angular/home.controller.js"></script>
-<script type="text/javascript" src="scoffer_app/angular/loggedin.controller.js"></script>
-<script type="text/javascript" src="scoffer_app/angular/signup.controller.js"></script>
-<script type="text/javascript" src="scoffer_app/angular/config.js"></script>
-<script type="text/javascript" src="scoffer_app/angular/animations.js"></script>
-<script type="text/javascript" src="scoffer_app/angular/services.js"></script>
+<script type="text/javascript" src="scoffer_app/angular/view-controllers/home.controller.js"></script>
+<script type="text/javascript" src="scoffer_app/angular/view-controllers/loggedin.controller.js"></script>
+<script type="text/javascript" src="scoffer_app/angular/view-controllers/signup.controller.js"></script>
+<script type="text/javascript" src="scoffer_app/angular/main/config.js"></script>
+<script type="text/javascript" src="scoffer_app/angular/main/animations.js"></script>
+<script type="text/javascript" src="scoffer_app/angular/services/login.service.js"></script>
+<script type="text/javascript" src="scoffer_app/angular/services/offer.service.js"></script>
 
 <!--directives-->
 <script type="text/javascript" src="scoffer_app/angular/components-reusable/validate-start-date.js"></script>
