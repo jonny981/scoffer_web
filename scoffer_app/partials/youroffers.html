@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="error" ng-hide="actionStatus === 'none'" ng-switch on="actionStatus">
+    <span ng-show="actionStatus === 'success'" class="success fa fa-check"></span>
+    <span ng-show="actionStatus === 'error'" class="fa fa-frown-o"></span>
+    <h5 ng-switch-when="success">Success! Your offer was deleted.</h5>
+    <h5 ng-switch-when="error">Whoops! Something went wrong - We were unable to delete your offer at this time, please
+        try again later</h5>
+    <button class="close" ng-click="clearAction()"><span class="fa fa-times"></span></button>
+</div>
+<div id="youroffers">
+    <header>
+        <h2><span class="fa fa-user"></span> My Offers</h2>
 
-</body>
-</html>
+        <h3><strong>Welcome, </strong><i>
+            <small>'{{currentUser.CompanyName}}'</small>
+        </i></h3>
+        <p ng-if="userOffers.length > 0">You have <strong>{{userOffers.length}} offers</strong>, you can re-post any of
+            these offers by clicking the
+            re-post
+            link and providing a new start and end date.</p>
+
+        <p ng-if="!userOffers">You currently have no offers in your account, why not <a ui-sref="postoffer">post an
+            offer now</a> to get started!</p>
+    </header>
+
+    <div id="offers" ng-repeat="offer in userOffers" ng-if="userOffers">
+        <table>
+            <caption>
+                <span>{{offer.OfferTitle}}</span>
+                <a ng-href="" ng-click="confirmRemoval(offer)"><i class="fa fa-times"></i> Remove</a>
+                <a ng-href=""><i class="fa fa-repeat"></i> Re Post</a>
+            </caption>
+            <tr>
+                <th>Offer Info</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Image</th>
+            </tr>
+            <tr>
+                <td>{{offer.FurtherInfo}}</td>
+                <td>{{offer.OfferStartDate | formatdate}}</td>
+                <td>{{offer.OfferExpiryDate | formatdate}}</td>
+                <td><img ng-src="http://res.cloudinary.com/scoffer/image/upload/v1426501613/to3zu9dt6viuabwyyfyo.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

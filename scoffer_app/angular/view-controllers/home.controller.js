@@ -34,7 +34,7 @@ scofferApp.controller('HomeCtrl', function ($scope, $http, $log, loginService, $
     };
 
     $scope.goToAbout = function () {
-        $state.go('notloggedin');
+        $state.go('home');
         $scope.gotoAnchor('learnmore');
     }
 
@@ -48,7 +48,7 @@ scofferApp.controller('HomeCtrl', function ($scope, $http, $log, loginService, $
                             $log.info('INFO - login Successful');
                             $scope.loggedInUser = response.data;
                             $scope.errorType = null;
-                            $state.go('loggedinlanding');
+                            $state.go('youroffers');
                         } else if (response.data.validDetails === false && response.data.validUser === true) {
                             $log.error('ERROR - Invalid login details');
                             $scope.errorType = 'invalid';

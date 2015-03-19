@@ -1,8 +1,4 @@
-/**
- * Created by Jonny on 04/12/2014.
- */
-
-scofferApp.controller('LoggedinCtrl', ['$scope', '$rootScope', '$location', '$upload', '$log', 'loginService', '$state',
+scofferApp.controller('PostOfferCtrl', ['$scope', '$rootScope', '$location', '$upload', '$log', 'loginService', '$state',
   function ($scope, $rootScope, $location, $upload, $log, loginService, $state) {
 
     if (!loginService.isLoggedIn()) {

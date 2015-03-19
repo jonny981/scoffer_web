@@ -18,32 +18,14 @@ $postdata = file_get_contents("php://input");
 
 $request = json_decode($postdata);
 
-$companyID = $request->CompanyID;
+$offerID = $request->OfferID;
 
-
-$sql = "SELECT *
+$sql = "DELETE
         FROM offer
-        WHERE CompanyID = '$companyID'
-        LIMIT 0 , 20";
+        WHERE OfferID = '$offerID'";
 
 $result = $con->query($sql);
 
-$rows["success"] = "";
-$rows["offers"] = array();
-$rows["totalOffers"] = 0;
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while ($row = $result->fetch_assoc()) {
-    $rows["offers"][] = $row;
-    $rows["totalOffers"]++;
-  }
-  $rows["success"] = true;
-} else {
-  $rows["success"] = true;
-  echo "0 results";
-}
-
-print json_encode($rows);
+print json_encode($result);
 $con->close();
 ?>

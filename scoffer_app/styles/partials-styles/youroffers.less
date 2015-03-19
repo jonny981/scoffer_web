@@ -1,0 +1,84 @@
+@import "mixins";
+
+#youroffers {
+  .default-container();
+  .scoffer-page-header();
+
+  #offers {
+    border-bottom: 1px solid @red-background;
+    padding-top: 15px;
+
+    table {
+      width: 100%;
+      table-layout: auto;
+      margin-bottom: 10px !important;
+      .table();
+
+      caption {
+        .make-row();
+        font-size: small;
+
+        @media (min-width: @screen-sm-min) {
+          font-size: large;
+        }
+
+        span:first-child {
+          .make-xs-column(12);
+          .make-sm-column(18);
+        }
+
+        a {
+          font-family: @main-font;
+          text-align: right;
+          cursor: pointer;
+          padding-right: 25px !important;
+
+          @media (min-width: @screen-sm-min) {
+            font-size: medium;
+          }
+        }
+
+        a:nth-child(2) {
+          .make-xs-column(6);
+          .make-sm-column(3);
+        }
+
+        a:nth-child(3) {
+          .make-xs-column(6);
+          .make-sm-column(3);
+        }
+
+        font-family: @main-font-caps;
+        padding-bottom: 15px;
+      }
+
+      td, th {
+        border-top: none !important;
+      }
+
+      tr:first-child {
+        font-family: @main-font-caps;
+      }
+
+      td {
+        height: 50px;
+        padding-top: 10px;
+      }
+
+      td:first-child {
+        width: 60%
+      }
+
+      th:last-child, td:last-child {
+        .hidden-xs();
+        width: 40px;
+        text-align: center;
+
+        img {
+          height: 40px;
+          width: auto;
+        }
+      }
+    }
+  }
+}

@@ -39,7 +39,7 @@ scofferApp.factory('loginService', ['$state', '$http', '$log', '$window', '$time
                 $window.sessionStorage.loggedInUser = null;
                 $window.sessionStorage.loginState = false;
                 $window.sessionStorage.clear();
-                $state.go('notloggedin');
+                $state.go('home');
             }
         }
     }]);

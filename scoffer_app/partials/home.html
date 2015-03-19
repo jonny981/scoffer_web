@@ -8,8 +8,8 @@
     <div id="signin-bottom">
         <nav id="navlinks">
             <span ng-click="goToAbout()"><i class="fa fa-book fa-2x"></i> Learn More</span>
-            <span ng-show="loggedIn" ui-sref="loggedinlanding"><i class="fa fa-paper-plane fa-2x"></i> Post Offer</span>
-            <span ng-show="loggedIn"><i class="fa fa-user fa-2x"></i> My Offers</span>
+            <span ng-show="loggedIn" ui-sref="postoffer"><i class="fa fa-paper-plane fa-2x"></i> Post Offer</span>
+            <span ng-show="loggedIn" ui-sref="youroffers"><i class="fa fa-user fa-2x"></i> My Offers</span>
             <span ng-show="loggedIn" ng-click="logOut()"><i class="fa fa-sign-out fa-2x"></i> Log Out</span>
             <span ng-hide="loggedIn" ui-sref="signup"><i class="fa fa-pencil-square-o fa-2x"></i> Sign Up</span>
             <span ng-hide="loggedIn" ng-click="isCollapsed = !isCollapsed"><i

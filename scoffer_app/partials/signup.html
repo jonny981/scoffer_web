@@ -1,5 +1,5 @@
 <div class="error" ng-hide="errorType === 'none'" ng-switch on="errorType">
-    <span class="info fa fa-exclamation-triangle"></span>
+    <span class="info fa fa-frown-o"></span>
     <h5 ng-switch-when="missingdata">Whoops! Something went wrong - Check that you have completed all of the required
         data fields</h5>
     <h5 ng-switch-when="zeroresults">Whoops! Something went wrong - We were unable to determine your location, please
@@ -167,7 +167,7 @@
                 </section>
             </div>
             <section class="submit-buttons">
-                <button ui-sref="notloggedin">Cancel</button>
+                <button ui-sref="home">Cancel</button>
                 <button type="submit"><span class="fa fa-pencil-square-o"></span> Sign Up</button>
             </section>
         </form>
