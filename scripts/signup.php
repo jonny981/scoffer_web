@@ -12,7 +12,7 @@ $socket = "";
 $dbname = "offers";
 
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
-or die ('Could not connect to the database server');
+or die ('Could not connect to the database server' . mysqli_connect_error());
 
 /*
 * Collect all Details from Angular HTTP Request.
@@ -35,12 +35,9 @@ $request = json_decode($postdata);
 $query = "INSERT INTO Company (CompanyName, Password, Latitude, Longitude, Description, OpeningTime, ClosingTime, Email, WebsiteURL, Type, PhoneNum)
           VALUES ('$companyName', '$password', '$latitude', '$longitude', '$description', '$openingTime', '$closingTime', '$email', '$websiteURL', '$type', '$phoneNum')";
 
-if (mysqli_query($con, $query)) {
-  echo "success";
-} else {
-  echo "error";
-//    echo "Error: " . $query . "<br>" . mysqli_error($con);
-}
+$result = $con->query($query);
+
+print json_encode($result);
 
 mysqli_close($con);
 

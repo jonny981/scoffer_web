@@ -32,7 +32,7 @@ $emailQuery = "SELECT *
 $emailResult = $con->query($emailQuery);
 
 class responseHolder {
-    function Car() {
+    function responseobject() {
         $this->validUser = false;
         $this->validDetails = false;
         $this->details = new ArrayObject();
