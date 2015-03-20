@@ -3,19 +3,35 @@
   font-family: @main-font-caps;
 }
 
-.confirm-removal {
+.modal-body {
+  text-align: center;
+}
 
-  .modal-footer {
-    text-align: center;
+.modal-footer {
+  text-align: center;
 
-    button {
-      .btn();
-      .btn-scoffer();
-      .btn-info();
+  button {
+    .btn();
+    .btn-scoffer();
+    .btn-info();
+  }
+
+  button + button {
+    .btn-primary();
+  }
+}
+
+.repost-modal {
+  .modal-body {
+    padding-right: 40px;
+    padding-left: 40px;
+
+    header {
+      padding-bottom: 20px;
     }
 
-    button + button {
-      .btn-primary();
+    label {
+      line-height: 40px;
     }
   }
 }

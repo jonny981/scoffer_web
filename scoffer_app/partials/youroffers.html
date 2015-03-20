@@ -1,6 +1,6 @@
-<div class="error" ng-hide="actionStatus === 'none'" ng-switch on="actionStatus">
+<div class="error" ng-blur="clearAction()" ng-hide="actionStatus === 'none'" ng-switch on="actionStatus">
     <span ng-show="actionStatus === 'success'" class="success fa fa-check"></span>
-    <span ng-show="actionStatus === 'error'" class="fa fa-frown-o"></span>
+    <span ng-show="actionStatus === 'error'" class="info fa fa-frown-o"></span>
     <h5 ng-switch-when="success">Success! Your offer was deleted.</h5>
     <h5 ng-switch-when="error">Whoops! Something went wrong - We were unable to delete your offer at this time, please
         try again later</h5>
@@ -22,12 +22,12 @@
             offer now</a> to get started!</p>
     </header>
 
-    <div id="offers" ng-repeat="offer in userOffers" ng-if="userOffers">
+    <div id="offers" ng-repeat="offer in userOffers | orderBy:'-OfferStartDate'" class="repeat-item" ng-if="userOffers">
         <table>
             <caption>
                 <span>{{offer.OfferTitle}}</span>
                 <a ng-href="" ng-click="confirmRemoval(offer)"><i class="fa fa-times"></i> Remove</a>
-                <a ng-href=""><i class="fa fa-repeat"></i> Re Post</a>
+                <a ng-href="" repost offer="offer" action-status="actionStatus"><i class="fa fa-repeat"></i> Re Post</a>
             </caption>
             <tr>
                 <th>Offer Info</th>

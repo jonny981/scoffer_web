@@ -32,7 +32,7 @@
             </ul>
         </header>
 
-        <form name="signupForm" ng-submit="submitSignup()" novalidate>
+        <form ng-hide="signupSuccess" name="signupForm" ng-submit="submitSignup()" novalidate>
             <div class="form-inputs">
                 <section class="standard-inputs">
                     <span class="divider"><h6>Login Details</h6></span>
@@ -75,7 +75,7 @@
                     <div class="form-group sc-form-group"
                          ng-class="{'has-error' : (signupForm.phoneNum.$invalid && showValidation)}">
                         <label for="phone-num">Company Phone Number</label>
-                        <input class="form-control sc-xs-input" type="number"
+                        <input class="form-control sc-xs-input" type="text"
                                placeholder="* Company phone number"
                                name="phoneNum" id="phone-num" ng-model="signup.phoneNum" ng-minlength="11"
                                ng-maxlength="11" required>
@@ -171,5 +171,11 @@
                 <button type="submit"><span class="fa fa-pencil-square-o"></span> Sign Up</button>
             </section>
         </form>
+    </div>
+    <div class="redirect" ng-show="signupSuccess">
+        <p><i class="success fa fa-check fa-2x"></i>
+            Your account was created successfully, please <a ui-sref="home"><strong>log in</strong></a> to begin using
+            Scoffer!
+        </p>
     </div>
 </div>

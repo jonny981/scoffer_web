@@ -1,7 +1,7 @@
 /**
  * Created by Jonny on 16/11/2014.
  */
-scofferApp.controller('HomeCtrl', function ($scope, $http, $log, loginService, $state, $location, $anchorScroll) {
+scofferApp.controller('HomeCtrl', function ($scope, $http, $log, loginService, $state, $location, $anchorScroll, $modal) {
 
     $scope.isCollapsed = true;
 
@@ -18,6 +18,13 @@ scofferApp.controller('HomeCtrl', function ($scope, $http, $log, loginService, $
     $scope.loginDetails = {
         email: '',
         password: ''
+    };
+
+    $scope.openContactModal = function () {
+        var contact = $modal.open({
+            templateUrl: 'scoffer_app/partials/modals/modal.contact.html',
+            backdrop: 'static'
+        });
     };
 
     $scope.gotoAnchor = function (elementID) {

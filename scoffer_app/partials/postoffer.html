@@ -1,3 +1,13 @@
+<div class="error" ng-hide="actionStatus === 'none'" ng-switch on="actionStatus">
+    <span ng-show="actionStatus === 'success'" class="success fa fa-check"></span>
+    <span ng-show="actionStatus === 'error' || actionStatus === 'missingdata'" class="info fa fa-frown-o"></span>
+    <h5 ng-switch-when="success">Success! Your offer was added.</h5>
+    <h5 ng-switch-when="error">Whoops! Something went wrong - We were unable to adding your offer at this time, please
+        try again later</h5>
+    <h5 ng-switch-when="missingdata">Whoops! Something went wrong - Check that you have completed all of the required
+        data fields</h5>
+    <button class="close" ng-click="clearAction()"><span class="fa fa-times"></span></button>
+</div>
 <div id="loggedin-landing">
     <div id="postoffer">
         <header>
@@ -13,13 +23,13 @@
                 restricted to point of sale.</p>
         </header>
 
-        <form name="postOfferForm" ng-submit="" novalidate>
+        <form name="postOfferForm" ng-hide="addSuccess" ng-submit="postOffer()" novalidate>
             <div class="form-inputs">
                 <section class="standard-inputs">
                     <span class="divider"><h6>Offer Details</h6></span>
 
                     <div class="form-group sc-form-group"
-                         ng-class="{'has-error' : (postOfferForm.offerTitle.$invalid)}">
+                         ng-class="{'has-error' : (postOfferForm.offerTitle.$pristine && showValidation)}">
                         <label for="offer-title">Offer Title</label>
                         <input class="form-control" type="text" name="offerTitle"
                                id="offer-title"
@@ -30,11 +40,11 @@
                            tooltip-placement="right"></i>
                     </div>
                     <div class="form-group sc-form-group"
-                         ng-class="{'has-error' : (postOfferForm.offerDetail.$invalid)}">
+                         ng-class="{'has-error' : (postOfferForm.offerDetail.$pristine && showValidation)}">
                         <label for="offer-detail">Offer Details/Description</label>
                         <textarea class="form-control sc-large-input" type="text" rows="3"
                                   placeholder="* Offer Detail"
-                                  name="offerDetail" id="offer-detail" ng-model="offerDetails.detail"
+                                  name="offerDetail" id="offer-detail" ng-model="offerDetails.details"
                                   ng-maxlength="255" required></textarea>
                         <i class="glyphicon glyphicon-question-sign"
                            tooltip="This is the text that will show when a user taps your offer to find out more information"
@@ -54,7 +64,7 @@
                                                           is-open="openedStart"
                                                           min-date="minDate" max-date="'2015-06-22'"
                                                           datepicker-options="dateOptions"
-                                                          date-disabled="disabled(date, mode)" ng-required="true"
+                                                          date-disabled="disabled(date, mode)"
                                                           close-text="Close"/>
                                  <span class="input-group-btn">
                                      <button type="button" class="btn btn-default" ng-click="datePickerStart($event)"><i
@@ -76,7 +86,7 @@
                                                           is-open="openedEnd"
                                                           min-date="offerDetails.startDate" max-date="maxDuration"
                                                           datepicker-options="dateOptions"
-                                                          date-disabled="disabled(date, mode)" ng-required="true"
+                                                          date-disabled="disabled(date, mode)"
                                                           close-text="Close"/>
                                  <span class="input-group-btn">
                                      <button type="button" class="btn btn-default" ng-click="datePickerEnd($event)"><i
@@ -108,10 +118,10 @@
 
                         <div class="form_controls">
                             <div class="upload_button_holder">
-                                <button class="upload_button" ng-file-select ng-multiple="false"
-                                        title="upload" resetOnClick="true" ng-model="files"><span
+                                <a class="upload_button" ng-file-select ng-multiple="false"
+                                   title="upload" resetOnClick="true" ng-model="files"><span
                                         class="fa fa-cloud-upload"></span> Upload
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -136,6 +146,13 @@
                 <button type="submit"><span class="fa fa-paper-plane"></span> Post Offer</button>
             </section>
         </form>
+        <div class="redirect" ng-show="addSuccess">
+            <p><i class="success fa fa-check fa-2x"></i>
+                Your offer was posted successfully, you can now either <a ng-click="reload()"><strong>post
+                    another</strong></a> or <a
+                        ui-sref="youroffers"><strong>view your offers.</strong></a>
+            </p>
+        </div>
     </div>
 </div>
 

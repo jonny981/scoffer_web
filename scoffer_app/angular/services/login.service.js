@@ -5,12 +5,7 @@ scofferApp.factory('loginService', ['$state', '$http', '$log', '$window', '$time
             login: function (loginDetails) {
                 $log.error('INFO - Submitting login details: ' + JSON.stringify(loginDetails));
 
-                var deferred = $q.defer();
-                $timeout(function () {
-                    deferred.resolve();
-                }, 20000);
-
-                return $http.post('http://localhost:8080/scripts/sign_in.php', JSON.stringify(loginDetails), {timeout: deferred.promise})
+                return $http.post('http://localhost:8080/scripts/sign_in.php', JSON.stringify(loginDetails))
                     .success(function (data) {
                         if (data.validDetails === true) {
                             $window.sessionStorage.loggedInUser = JSON.stringify(data.details);

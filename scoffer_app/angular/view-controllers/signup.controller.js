@@ -40,10 +40,10 @@ scofferApp.controller('SignupCtrl', function ($anchorScroll, $log, $scope, $http
         phoneNum: ""
     };
 
-    $scope.$watch('signup.openingTime', function () {
-        var test = $scope.signup.openingTime;
-        $log.error(moment(test).format('HHmm'));
-    });
+    //$scope.$watch('signup.openingTime', function () {
+    //    var test = $scope.signup.openingTime;
+    //    $log.error(moment(test).format('HHmm'));
+    //});
 
     var statusCodes = {
         ok: "OK",
@@ -76,9 +76,6 @@ scofferApp.controller('SignupCtrl', function ($anchorScroll, $log, $scope, $http
                 .success(function (response) {
                     $scope.signup.latitude = response.results[0].geometry.location.lat;
                     $scope.signup.longitude = response.results[0].geometry.location.lng;
-                    console.log("latitude:" + $scope.signup.latitude);
-                    console.log("longitude:" + $scope.signup.longitude);
-                    console.log('Geolocation = ' + JSON.stringify(response, null, '\t'));
 
                     //if google maps query returns 'ok' status then
                     if (response.status === statusCodes.ok) {
@@ -86,21 +83,23 @@ scofferApp.controller('SignupCtrl', function ($anchorScroll, $log, $scope, $http
                         $scope.signup.closingTime = moment($scope.closingTime).format('HH:mm');
 
                         $http.post('http://localhost:8080/scripts/signup.php', JSON.stringify($scope.signup))
-                            .success(function (data, status, statusText, headers, config) {
+                            .success(function (success, status) {
                                 $log.info('INFO - returned HTTP status code: ' + status);
-                                if (data === 'success') {
-                                    $log.info('INFO - signup query status:' + data);
-                                    $state.go('notloggedin')
+                                if (success) {
+                                    $log.info('INFO - signup query success:' + JSON.stringify(success, null, 4));
+                                    $scope.errorType = 'none';
+                                    $scope.signupSuccess = true;
                                 } else {
                                     $anchorScroll();
-                                    $log.error(JSON.stringify(data, null, 4));
-                                    $log.error('ERROR - The server was successfully contacted but there was an error posting data to the ' +
+                                    $scope.errorType = 'servererror';
+                                    $log.error('ERROR - signup query success:' + JSON.stringify(success, null, 4));
+                                    $log.error('ERROR - (1) The server was successfully contacted but there was an error posting data to the ' +
                                     'database, data provided may be incomplete or in an incorrect format')
                                 }
                             })
-                            .error(function (data) {
-                                $log.error(JSON.stringify(data, null, 4));
-                                $log.error('ERROR - An error occurred from the server, it may be offline or currently unreachable due to maintenance');
+                            .error(function (error) {
+                                $log.error('ERROR - signup query success:' + JSON.stringify(error, null, 4));
+                                $log.error('ERROR - (2) An error occurred from the server, it may be offline or currently unreachable due to maintenance');
                                 $scope.errorType = 'servererror';
                                 $anchorScroll();
                                 // called asynchronously if an error occurs

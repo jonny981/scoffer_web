@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <button class="close" ng-click="$dismiss()"></button>
+
+    <h3><i class="fa fa-repeat"></i> Re Post Offer</h3>
+</div>
+
+<div class="modal-body">
+    <header>Please select new start and end dates for <strong>'{{offerDetails.title}}'</strong></header>
+    <section class="dp-inputs">
+        <div class="form-group sc-form-group">
+            <label class="sc-datepicker-label">Start Date</label>
+
+            <div class="sc-datepicker-input">
+                <p class="input-group"><input type="text" class="form-control" datepicker-popup="{{format}}"
+                                              ng-model="offerDetails.startDate"
+                                              is-open="openedStart"
+                                              min-date="minDate" max-date="'2015-06-22'"
+                                              datepicker-options="dateOptions"
+                                              date-disabled="disabled(date, mode)"
+                                              close-text="Close"/>
+                                 <span class="input-group-btn">
+                                     <button type="button" class="btn btn-default" ng-click="datePickerStart($event)"><i
+                                             class="glyphicon glyphicon-calendar"></i></button>
+                                 </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group sc-form-group">
+            <label class="sc-datepicker-label">End Date</label>
+
+            <div class="sc-datepicker-input">
+                <p class="input-group"><input type="text" class="form-control" datepicker-popup="{{format}}"
+                                              ng-model="offerDetails.endDate"
+                                              is-open="openedEnd"
+                                              min-date="offerDetails.startDate" max-date="maxDuration"
+                                              datepicker-options="dateOptions"
+                                              date-disabled="disabled(date, mode)"
+                                              close-text="Close"/>
+                                 <span class="input-group-btn">
+                                     <button type="button" class="btn btn-default" ng-click="datePickerEnd($event)"><i
+                                             class="glyphicon glyphicon-calendar"></i></button>
+                                 </span>
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="modal-footer">
+    <button ng-click="$dismiss()">Cancel</button>
+    <button ng-click="postOffer()"><span class="fa fa-paper-plane"></span> Post Offer</button>
+</div>

@@ -9,6 +9,7 @@
 
 
 body {
+  transition: .25s linear !important;
   font-family: @main-font;
   font-weight: @main-font-weight;
   background-color: #ffffff;
@@ -106,12 +107,17 @@ body {
   position: absolute;
   width: 100%;
   background-color: rgb(220, 220, 220);
-  text-align: left;
   top: 50px;
-  padding: 5px 15px 5px 15px;
+  text-align: center;
   transition: .25s linear;
-  height: 40px;
-  overflow: hidden;
+  z-index: 110;
+
+  @media (min-width: @screen-sm-min) {
+    height: 50px;
+    text-align: left;
+    padding: 10px;
+    line-height: 30px;
+  }
 
   .default-padding();
 
@@ -124,29 +130,31 @@ body {
   .success {
     color: green;
     font-size: large;
-    line-height: 30px;
   }
 
-  span:first-child {
-    padding-left: 20px;
+  .fa {
+    @media (min-width: @screen-sm-min) {
+      padding-left: 20px;
+    }
   }
 
   span:last-child {
-    padding-right: 20px;
+    @media (min-width: @screen-sm-min) {
+      padding-right: 20px;
+    }
   }
 
   h5 {
     display: inline !important;
     font-size: medium;
     font-weight: 200;
-    line-height: 30px;
     margin-top: 0px;
     margin-bottom: 0px;
     color: #ffffff;
     text-align: center;
     left: auto;
     right: auto;
-    padding-left: 15px;
+    padding-left: 5px;
   }
 
   button {
@@ -155,8 +163,10 @@ body {
     text-align: right;
 
     span {
+      @media (min-width: @screen-sm-min) {
+        line-height: 30px;
+      }
       color: #000000;
-      line-height: 30px;
     }
   }
 }
@@ -226,6 +236,26 @@ footer {
       }
     }
   }
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave {
+  -webkit-transition: 0.8s linear all;
+  transition: 0.8s linear all;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.repeat-item {
+  background-color: white;
 }
 
 

@@ -20,7 +20,6 @@ scofferApp.controller('YourOffersCtrl', function ($scope, $http, $log, loginServ
         var remove = $modal.open({
             templateUrl: 'scoffer_app/partials/modals/modal.confirmremove.html',
             backdrop: 'static',
-            windowClass: 'confirm-removal',
             scope: $scope
         });
         remove.result.then(function (yes) {
@@ -36,7 +35,7 @@ scofferApp.controller('YourOffersCtrl', function ($scope, $http, $log, loginServ
                 }
             }, function (error) {
                 $log.error('ERROR - Server error - cannot delete offer');
-                $scope.actionStatus = 'success';
+                $scope.actionStatus = 'error';
             }).finally(function () {
                 $anchorScroll();
             })

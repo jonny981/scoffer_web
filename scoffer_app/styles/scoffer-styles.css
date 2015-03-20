@@ -6855,6 +6855,8 @@ button.close {
 #signup-page #signup-form form .form-inputs .standard-inputs:after,
 #signup-page #signup-form form .form-inputs .timepicker-group:before,
 #signup-page #signup-form form .form-inputs .timepicker-group:after,
+#youroffers #offers table caption:before,
+#youroffers #offers table caption:after,
 footer #footer-container:before,
 footer #footer-container:after {
   content: " ";
@@ -6882,6 +6884,7 @@ footer #footer-container:after {
 #signup-page #signup-form form .form-inputs .divider:after,
 #signup-page #signup-form form .form-inputs .standard-inputs:after,
 #signup-page #signup-form form .form-inputs .timepicker-group:after,
+#youroffers #offers table caption:after,
 footer #footer-container:after {
   clear: both;
 }
@@ -7161,6 +7164,14 @@ footer #footer-container:after {
 .form-group label,
 .form-group input {
   display: inline;
+}
+.redirect {
+  padding-top: 80px;
+  font-size: medium;
+  text-align: center;
+}
+.redirect .fa {
+  color: green;
 }
 #loggedin-landing {
   padding-top: 0px !important;
@@ -8522,10 +8533,369 @@ fieldset[disabled] #signin #signin-bottom form div:nth-child(3) button.active {
   text-align: center;
   font-family: Delicious-Caps;
 }
+#youroffers {
+  border-top: 10px solid #c93055;
+  min-height: 750px !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #youroffers {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #youroffers h2 {
+    padding-top: 30px !important;
+  }
+}
+@media (min-width: 992px) {
+  #youroffers {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+@media (min-width: 1200px) {
+  #youroffers {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
+#youroffers .sc-error {
+  padding-top: 20px;
+}
+#youroffers header {
+  padding-bottom: 15px;
+  border-bottom: 5px solid #c93055;
+  font-size: medium;
+}
+@media (min-width: 768px) {
+  #youroffers header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+#youroffers header h2 {
+  font-family: Blenda;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+#youroffers header p:first-of-type {
+  margin-top: 20px;
+}
+#youroffers #offers {
+  border-bottom: 1px solid #c93055;
+  padding-top: 15px;
+}
+#youroffers #offers table {
+  table-layout: auto;
+  margin-bottom: 10px !important;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+#youroffers #offers table > thead > tr > th,
+#youroffers #offers table > tbody > tr > th,
+#youroffers #offers table > tfoot > tr > th,
+#youroffers #offers table > thead > tr > td,
+#youroffers #offers table > tbody > tr > td,
+#youroffers #offers table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+#youroffers #offers table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+#youroffers #offers table > caption + thead > tr:first-child > th,
+#youroffers #offers table > colgroup + thead > tr:first-child > th,
+#youroffers #offers table > thead:first-child > tr:first-child > th,
+#youroffers #offers table > caption + thead > tr:first-child > td,
+#youroffers #offers table > colgroup + thead > tr:first-child > td,
+#youroffers #offers table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+#youroffers #offers table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+#youroffers #offers table .table {
+  background-color: #ffffff;
+}
+#youroffers #offers table caption {
+  margin-left: -15px;
+  margin-right: -15px;
+  font-size: small;
+  font-family: Delicious-Caps;
+  padding-bottom: 15px;
+}
+@media (min-width: 768px) {
+  #youroffers #offers table caption {
+    font-size: large;
+  }
+}
+#youroffers #offers table caption span:first-child {
+  float: left;
+  width: 50%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #youroffers #offers table caption span:first-child {
+    float: left;
+    width: 75%;
+  }
+}
+#youroffers #offers table caption a {
+  font-family: Delicious;
+  text-align: right;
+  cursor: pointer;
+  padding-right: 25px !important;
+}
+@media (min-width: 768px) {
+  #youroffers #offers table caption a {
+    font-size: medium;
+  }
+}
+#youroffers #offers table caption a:nth-child(2) {
+  float: left;
+  width: 25%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #youroffers #offers table caption a:nth-child(2) {
+    float: left;
+    width: 12.5%;
+  }
+}
+#youroffers #offers table caption a:nth-child(3) {
+  float: left;
+  width: 25%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #youroffers #offers table caption a:nth-child(3) {
+    float: left;
+    width: 12.5%;
+  }
+}
+#youroffers #offers table td,
+#youroffers #offers table th {
+  border-top: none !important;
+}
+#youroffers #offers table tr:first-child {
+  font-family: Delicious-Caps;
+}
+#youroffers #offers table td {
+  height: 50px;
+  padding-top: 10px;
+}
+#youroffers #offers table td:first-child {
+  width: 60%;
+}
+#youroffers #offers table th:last-child,
+#youroffers #offers table td:last-child {
+  width: 40px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  #youroffers #offers table th:last-child,
+  #youroffers #offers table td:last-child {
+    display: none !important;
+  }
+}
+#youroffers #offers table th:last-child img,
+#youroffers #offers table td:last-child img {
+  height: 40px;
+  width: auto;
+}
+.modal-header {
+  text-align: center;
+  font-family: Delicious-Caps;
+}
+.modal-body {
+  text-align: center;
+}
+.modal-footer {
+  text-align: center;
+}
+.modal-footer button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 6px 30px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 0px;
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.modal-footer button:focus,
+.modal-footer button:active:focus,
+.modal-footer button.active:focus,
+.modal-footer button.focus,
+.modal-footer button:active.focus,
+.modal-footer button.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.modal-footer button:hover,
+.modal-footer button:focus,
+.modal-footer button.focus {
+  color: #333333;
+  text-decoration: none;
+}
+.modal-footer button:active,
+.modal-footer button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.modal-footer button.disabled,
+.modal-footer button[disabled],
+fieldset[disabled] .modal-footer button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.modal-footer button:hover,
+.modal-footer button:focus,
+.modal-footer button.focus,
+.modal-footer button:active,
+.modal-footer button.active,
+.open > .dropdown-toggle.modal-footer button {
+  color: #ffffff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.modal-footer button:active,
+.modal-footer button.active,
+.open > .dropdown-toggle.modal-footer button {
+  background-image: none;
+}
+.modal-footer button.disabled,
+.modal-footer button[disabled],
+fieldset[disabled] .modal-footer button,
+.modal-footer button.disabled:hover,
+.modal-footer button[disabled]:hover,
+fieldset[disabled] .modal-footer button:hover,
+.modal-footer button.disabled:focus,
+.modal-footer button[disabled]:focus,
+fieldset[disabled] .modal-footer button:focus,
+.modal-footer button.disabled.focus,
+.modal-footer button[disabled].focus,
+fieldset[disabled] .modal-footer button.focus,
+.modal-footer button.disabled:active,
+.modal-footer button[disabled]:active,
+fieldset[disabled] .modal-footer button:active,
+.modal-footer button.disabled.active,
+.modal-footer button[disabled].active,
+fieldset[disabled] .modal-footer button.active {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.modal-footer button .badge {
+  color: #5bc0de;
+  background-color: #ffffff;
+}
+.modal-footer button + button {
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.modal-footer button + button:hover,
+.modal-footer button + button:focus,
+.modal-footer button + button.focus,
+.modal-footer button + button:active,
+.modal-footer button + button.active,
+.open > .dropdown-toggle.modal-footer button + button {
+  color: #ffffff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.modal-footer button + button:active,
+.modal-footer button + button.active,
+.open > .dropdown-toggle.modal-footer button + button {
+  background-image: none;
+}
+.modal-footer button + button.disabled,
+.modal-footer button + button[disabled],
+fieldset[disabled] .modal-footer button + button,
+.modal-footer button + button.disabled:hover,
+.modal-footer button + button[disabled]:hover,
+fieldset[disabled] .modal-footer button + button:hover,
+.modal-footer button + button.disabled:focus,
+.modal-footer button + button[disabled]:focus,
+fieldset[disabled] .modal-footer button + button:focus,
+.modal-footer button + button.disabled.focus,
+.modal-footer button + button[disabled].focus,
+fieldset[disabled] .modal-footer button + button.focus,
+.modal-footer button + button.disabled:active,
+.modal-footer button + button[disabled]:active,
+fieldset[disabled] .modal-footer button + button:active,
+.modal-footer button + button.disabled.active,
+.modal-footer button + button[disabled].active,
+fieldset[disabled] .modal-footer button + button.active {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.modal-footer button + button .badge {
+  color: #337ab7;
+  background-color: #ffffff;
+}
+.repost-modal .modal-body {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.repost-modal .modal-body header {
+  padding-bottom: 20px;
+}
+.repost-modal .modal-body label {
+  line-height: 40px;
+}
 body {
+  transition: .25s linear !important;
   font-family: Delicious;
   font-weight: normal;
   background-color: #ffffff;
+}
+body div[ui-view] {
+  padding-top: 50px;
+}
+@media (min-width: 768px) {
+  body div[ui-view] {
+    padding-top: 55px;
+  }
 }
 #route-change-container {
   padding-top: 100% !important;
@@ -8536,6 +8906,9 @@ body {
 .navbar {
   border-radius: 0px !important;
   margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 100 !important;
 }
 .navbar-brand {
   font-family: Blenda;
@@ -8550,10 +8923,16 @@ body {
 .navbar-nav li > a {
   cursor: pointer;
 }
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .navbar-nav li > a {
     padding-left: 5px !important;
     padding-right: 5px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar-nav li > a {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 }
 .navbar-right li > a {
@@ -8575,6 +8954,16 @@ body {
   height: 30px;
   width: auto;
   margin-left: 10px;
+}
+@media (max-width: 767px) {
+  .navbar-right img {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-right img {
+    display: none !important;
+  }
 }
 .navbar-right span {
   font-family: Blenda;
@@ -8607,13 +8996,18 @@ body {
   position: absolute;
   width: 100%;
   background-color: #dcdcdc;
-  text-align: left;
   top: 50px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  text-align: center;
   transition: .25s linear;
-  height: 40px;
-  overflow: hidden;
+  z-index: 110;
+}
+@media (min-width: 768px) {
+  .error {
+    height: 50px;
+    text-align: left;
+    padding: 10px;
+    line-height: 30px;
+  }
 }
 @media (min-width: 768px) {
   .error {
@@ -8641,18 +9035,31 @@ body {
   font-size: large;
   line-height: 30px;
 }
+.error .success {
+  color: green;
+  font-size: large;
+}
+@media (min-width: 768px) {
+  .error .fa {
+    padding-left: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .error span:last-child {
+    padding-right: 20px;
+  }
+}
 .error h5 {
   display: inline !important;
   font-size: medium;
   font-weight: 200;
-  line-height: 30px;
   margin-top: 0px;
   margin-bottom: 0px;
   color: #ffffff;
   text-align: center;
   left: auto;
   right: auto;
-  padding-left: 15px;
+  padding-left: 5px;
 }
 .error button {
   display: inline !important;
@@ -8660,15 +9067,44 @@ body {
   text-align: right;
 }
 .error button span {
-  color: #c93055;
-  line-height: 30px;
+  color: #000000;
+}
+@media (min-width: 768px) {
+  .error button span {
+    line-height: 30px;
+  }
 }
 .error.ng-hide {
   height: 0px;
   opacity: 0;
 }
+@media (min-width: 768px) {
+  #back-to-top {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #back-to-top h2 {
+    padding-top: 30px !important;
+  }
+}
+@media (min-width: 992px) {
+  #back-to-top {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+@media (min-width: 1200px) {
+  #back-to-top {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
+#back-to-top a {
+  cursor: pointer;
+  text-align: left;
+}
 footer {
-  padding-top: 15px;
+  padding-top: 10px;
   margin-top: 25px;
   left: 0px;
   min-height: 50px;
@@ -8697,6 +9133,11 @@ footer {
     padding-right: 17%;
   }
 }
+@media (min-width: 768px) {
+  footer {
+    position: fixed;
+  }
+}
 footer #footer-container {
   margin-left: -15px;
   margin-right: -15px;
@@ -8708,7 +9149,7 @@ footer #footer-container span {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   display: block;
   text-align: center;
 }
@@ -8741,4 +9182,20 @@ footer #footer-container span:nth-child(3) i {
 }
 footer #footer-container span:nth-child(3) i:hover {
   color: #ffffff;
+}
+.repeat-item.ng-enter,
+.repeat-item.ng-leave {
+  -webkit-transition: 0.8s linear all;
+  transition: 0.8s linear all;
+}
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.repeat-item {
+  background-color: white;
 }

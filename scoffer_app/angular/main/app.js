@@ -9,7 +9,7 @@ var scofferApp = angular.module('scofferApp',
         'ngResource'
     ])
     .config(function ($stateProvider, $urlRouterProvider) {
-        //
+
         // For any unmatched url, redirect to /notloggedin
         $urlRouterProvider.otherwise("/home");
         //
